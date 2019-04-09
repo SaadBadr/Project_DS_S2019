@@ -76,19 +76,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Events\ArrivalEvent.h" />
-    <ClInclude Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Events\CancelationEvent.h" />
-    <ClInclude Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Events\Event.h" />
-    <ClInclude Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Events\PromotionEvent.h" />
-    <ClInclude Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Generic_DS\Node.h" />
-    <ClInclude Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Generic_DS\PriorityQueue.h" />
-    <ClInclude Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Generic_DS\Queue.h" />
-    <ClInclude Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Generic_DS\Tree.h" />
-    <ClInclude Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Generic_DS\TreeNode.h" />
-    <ClInclude Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\IO.h" />
-    <ClInclude Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Rest\Motorcycle.h" />
-    <ClInclude Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Rest\Order.h" />
-    <ClInclude Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Rest\Restaurant.h" />
     <ClInclude Include="CMUgraphicsLib\CMUgraphics.h" />
     <ClInclude Include="CMUgraphicsLib\colors.h" />
     <ClInclude Include="CMUgraphicsLib\error.h" />
@@ -109,17 +96,22 @@
     <ClInclude Include="CMUgraphicsLib\version.h" />
     <ClInclude Include="CMUgraphicsLib\windowinput.h" />
     <ClInclude Include="Defs.h" />
+    <ClInclude Include="Events\ArrivalEvent.h" />
+    <ClInclude Include="Events\CancelationEvent.h" />
+    <ClInclude Include="Events\Event.h" />
+    <ClInclude Include="Events\PromotionEvent.h" />
+    <ClInclude Include="Generic_DS\Node.h" />
+    <ClInclude Include="Generic_DS\PriorityQueue.h" />
+    <ClInclude Include="Generic_DS\Queue.h" />
+    <ClInclude Include="Generic_DS\Tree.h" />
+    <ClInclude Include="Generic_DS\TreeNode.h" />
     <ClInclude Include="GUI\GUI.h" />
+    <ClInclude Include="IO.h" />
+    <ClInclude Include="Rest\Motorcycle.h" />
+    <ClInclude Include="Rest\Order.h" />
+    <ClInclude Include="Rest\Restaurant.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Events\ArrivalEvent.cpp" />
-    <ClCompile Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Events\CancelationEvent.cpp" />
-    <ClCompile Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Events\Event.cpp" />
-    <ClCompile Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Events\PromotionEvent.cpp" />
-    <ClCompile Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\IO.cpp" />
-    <ClCompile Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Rest\Motorcycle.cpp" />
-    <ClCompile Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Rest\Order.cpp" />
-    <ClCompile Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Rest\Restaurant.cpp" />
     <ClCompile Include="CMUgraphicsLib\CMUgraphics.cpp" />
     <ClCompile Include="CMUgraphicsLib\colors.cpp" />
     <ClCompile Include="CMUgraphicsLib\image.cpp" />
@@ -156,7 +148,15 @@
     <ClCompile Include="CMUgraphicsLib\mousequeue.cpp" />
     <ClCompile Include="CMUgraphicsLib\windowinput.cpp" />
     <ClCompile Include="Demo_Main.cpp" />
+    <ClCompile Include="Events\ArrivalEvent.cpp" />
+    <ClCompile Include="Events\CancelationEvent.cpp" />
+    <ClCompile Include="Events\Event.cpp" />
+    <ClCompile Include="Events\PromotionEvent.cpp" />
     <ClCompile Include="GUI\GUI.cpp" />
+    <ClCompile Include="IO.cpp" />
+    <ClCompile Include="Rest\Motorcycle.cpp" />
+    <ClCompile Include="Rest\Order.cpp" />
+    <ClCompile Include="Rest\Restaurant.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="CMUgraphicsLib\Manual.txt" />

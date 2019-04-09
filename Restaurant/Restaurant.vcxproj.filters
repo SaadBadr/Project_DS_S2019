@@ -87,43 +87,43 @@
     <ClInclude Include="GUI\GUI.h">
       <Filter>GUI</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Events\ArrivalEvent.h">
+    <ClInclude Include="Events\ArrivalEvent.h">
       <Filter>Events</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Events\CancelationEvent.h">
+    <ClInclude Include="Events\CancelationEvent.h">
       <Filter>Events</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Events\Event.h">
+    <ClInclude Include="Events\Event.h">
       <Filter>Events</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Events\PromotionEvent.h">
+    <ClInclude Include="Events\PromotionEvent.h">
       <Filter>Events</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Generic_DS\Node.h">
+    <ClInclude Include="Generic_DS\Node.h">
       <Filter>Generic_DS</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Generic_DS\PriorityQueue.h">
+    <ClInclude Include="Generic_DS\PriorityQueue.h">
       <Filter>Generic_DS</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Generic_DS\Queue.h">
+    <ClInclude Include="Generic_DS\Queue.h">
       <Filter>Generic_DS</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Generic_DS\Tree.h">
+    <ClInclude Include="Generic_DS\Tree.h">
       <Filter>Generic_DS</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Generic_DS\TreeNode.h">
+    <ClInclude Include="Generic_DS\TreeNode.h">
       <Filter>Generic_DS</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Rest\Motorcycle.h">
+    <ClInclude Include="Rest\Motorcycle.h">
       <Filter>Restaurant</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Rest\Order.h">
+    <ClInclude Include="Rest\Order.h">
       <Filter>Restaurant</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Rest\Restaurant.h">
+    <ClInclude Include="Rest\Restaurant.h">
       <Filter>Restaurant</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\IO.h">
+    <ClInclude Include="IO.h">
       <Filter>Restaurant</Filter>
     </ClInclude>
   </ItemGroup>
@@ -237,28 +237,28 @@
     <ClCompile Include="GUI\GUI.cpp">
       <Filter>GUI</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Events\ArrivalEvent.cpp">
+    <ClCompile Include="Events\ArrivalEvent.cpp">
       <Filter>Events</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Events\CancelationEvent.cpp">
+    <ClCompile Include="Events\CancelationEvent.cpp">
       <Filter>Events</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Events\Event.cpp">
+    <ClCompile Include="Events\Event.cpp">
       <Filter>Events</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Events\PromotionEvent.cpp">
+    <ClCompile Include="Events\PromotionEvent.cpp">
       <Filter>Events</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Rest\Motorcycle.cpp">
+    <ClCompile Include="Rest\Motorcycle.cpp">
       <Filter>Restaurant</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Rest\Order.cpp">
+    <ClCompile Include="Rest\Order.cpp">
       <Filter>Restaurant</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\Rest\Restaurant.cpp">
+    <ClCompile Include="Rest\Restaurant.cpp">
       <Filter>Restaurant</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Saad%27s Restaurant\Project_Code_S2019\Restaurant\IO.cpp" />
+    <ClCompile Include="IO.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="CMUgraphicsLib\Manual.txt">
