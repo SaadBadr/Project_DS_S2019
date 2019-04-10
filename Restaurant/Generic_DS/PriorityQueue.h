@@ -41,6 +41,7 @@ bool PriorityQueue <T> :: frontpeek (T & frontentry)
 template<class T>
 bool PriorityQueue <T> :: dequeue(T & frontentry)			// what can i do if there is no items ?
 {
+
 	return myTree.pop_largest(frontentry);
 }
 

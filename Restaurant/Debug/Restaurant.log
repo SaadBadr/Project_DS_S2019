@@ -5,7 +5,7 @@ c:\users\saadm\documents\github\project_code_s2019\restaurant\generic_ds\tree.h(
           [
               T=Order *
           ]
-          c:\users\saadm\documents\github\project_code_s2019\restaurant\generic_ds\priorityqueue.h(44) : see reference to function template instantiation 'bool Tree<T>::pop_largest(T &)' being compiled
+          c:\users\saadm\documents\github\project_code_s2019\restaurant\generic_ds\priorityqueue.h(45) : see reference to function template instantiation 'bool Tree<T>::pop_largest(T &)' being compiled
           with
           [
               T=Order *
@@ -15,7 +15,7 @@ c:\users\saadm\documents\github\project_code_s2019\restaurant\generic_ds\tree.h(
           [
               T=Order *
           ]
-          c:\users\saadm\documents\github\project_code_s2019\restaurant\rest\restaurant.cpp(182) : see reference to function template instantiation 'Tree<T>::~Tree(void)' being compiled
+          c:\users\saadm\documents\github\project_code_s2019\restaurant\rest\restaurant.cpp(14) : see reference to function template instantiation 'Tree<T>::~Tree(void)' being compiled
           with
           [
               T=Order *
@@ -25,7 +25,7 @@ c:\users\saadm\documents\github\project_code_s2019\restaurant\generic_ds\tree.h(
           [
               T=Order *
           ]
-          c:\users\saadm\documents\github\project_code_s2019\restaurant\rest\restaurant.h(87) : see reference to class template instantiation 'PriorityQueue<T>' being compiled
+          c:\users\saadm\documents\github\project_code_s2019\restaurant\rest\restaurant.h(33) : see reference to class template instantiation 'PriorityQueue<T>' being compiled
           with
           [
               T=Order *
@@ -41,57 +41,4 @@ c:\users\saadm\documents\github\project_code_s2019\restaurant\generic_ds\tree.h(
           [
               T=Order *
           ]
-  Order.cpp
-c:\users\saadm\documents\github\project_code_s2019\restaurant\rest\order.cpp(41): warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
-  Motorcycle.cpp
-  IO.cpp
-c:\users\saadm\documents\github\project_code_s2019\restaurant\io.cpp(86): warning C4244: 'argument' : conversion from 'double' to 'const int', possible loss of data
-  PromotionEvent.cpp
-  Event.cpp
-  CancelationEvent.cpp
-  ArrivalEvent.cpp
-  Demo_Main.cpp
-  Generating Code...
-  jutils.c
-  jquant2.c
-  jquant1.c
-  jmemnobs.c
-  jmemmgr.c
-c:\users\saadm\documents\github\project_code_s2019\restaurant\cmugraphicslib\jpeg\jmemmgr.c(1103): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-          c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdlib.h(449) : see declaration of 'getenv'
-c:\users\saadm\documents\github\project_code_s2019\restaurant\cmugraphicslib\jpeg\jmemmgr.c(1106): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-          c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(311) : see declaration of 'sscanf'
-  jidctred.c
-  jidctint.c
-  jidctfst.c
-  jidctflt.c
-  jerror.c
-c:\users\saadm\documents\github\project_code_s2019\restaurant\cmugraphicslib\jpeg\jerror.c(169): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-          c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
-c:\users\saadm\documents\github\project_code_s2019\restaurant\cmugraphicslib\jpeg\jerror.c(175): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-          c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
-  jdtrans.c
-  jdsample.c
-  jdpostct.c
-  jdphuff.c
-  jdmerge.c
-  jdmaster.c
-  jdmarker.c
-  jdmainct.c
-  jdinput.c
-  jdhuff.c
-  Generating Code...
-  Compiling...
-  jddctmgr.c
-  jdcolor.c
-  jdcoefct.c
-  jdatasrc.c
-  jdapistd.c
-  jdapimin.c
-  jcparam.c
-  jcomapi.c
-  jpegload.c
-c:\users\saadm\documents\github\project_code_s2019\restaurant\cmugraphicslib\jpegload.c(23): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-          c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(218) : see declaration of 'fopen'
-  Generating Code...
   Restaurant.vcxproj -> C:\Users\saadm\Documents\GitHub\Project_Code_S2019\Debug\Restaurant.exe

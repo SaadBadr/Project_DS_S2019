@@ -16,7 +16,7 @@ void CancelationEvent::Execute(Restaurant* pRest)const{
 	Order * front = pRest->PeekNormalQueueA();
 	Order * current;
 
-	if (front->GetID() == OrderID) {
+	if (front && front->GetID() == OrderID) {
 		pRest->DequeueNormalQueueA();
 		delete front;
 		return;
@@ -26,10 +26,10 @@ void CancelationEvent::Execute(Restaurant* pRest)const{
 
 		current = pRest->DequeueNormalQueueA();
 
-		if (current->GetID() != OrderID)
+		if (current && current->GetID() != OrderID)
 			pRest->AddtoNormalQueueA(current);
 	
-		else{
+		else if(current){
 
 			delete current;
 			Canceled = true;
@@ -44,7 +44,7 @@ void CancelationEvent::Execute(Restaurant* pRest)const{
 
 	front = pRest->PeekNormalQueueB();
 
-	if (front->GetID() == OrderID) {
+	if (front && front->GetID() == OrderID) {
 
 		pRest->DequeueNormalQueueB();
 		delete front;
@@ -55,10 +55,10 @@ void CancelationEvent::Execute(Restaurant* pRest)const{
 
 		current = pRest->DequeueNormalQueueB();
 
-		if (current->GetID() != OrderID)
+		if (current && current->GetID() != OrderID)
 			pRest->AddtoNormalQueueB(current);
 		
-		else {
+		else if(current){
 			delete current;
 			Canceled = true;
 		}
@@ -72,7 +72,7 @@ void CancelationEvent::Execute(Restaurant* pRest)const{
 
 	front = pRest->PeekNormalQueueC();
 
-	if (front->GetID() == OrderID){
+	if (front && front->GetID() == OrderID){
 
 		pRest->DequeueNormalQueueC();
 		delete front;
@@ -83,10 +83,10 @@ void CancelationEvent::Execute(Restaurant* pRest)const{
 
 		current = pRest->DequeueNormalQueueC();
 
-		if (current->GetID() != OrderID)
+		if (current && current->GetID() != OrderID)
 			pRest->AddtoNormalQueueC(current);
 		
-		else{
+		else if(current){
 		
 			delete current;
 			Canceled = true;
@@ -102,7 +102,7 @@ void CancelationEvent::Execute(Restaurant* pRest)const{
 
 	front = pRest->PeekNormalQueueD();
 	
-	if (front->GetID() == OrderID) {
+	if (front && front->GetID() == OrderID) {
 
 		pRest->DequeueNormalQueueD();
 		delete front;
@@ -113,10 +113,10 @@ void CancelationEvent::Execute(Restaurant* pRest)const{
 
 		current = pRest->DequeueNormalQueueD();
 
-		if (current->GetID() != OrderID)
+		if (current && current->GetID() != OrderID)
 			pRest->AddtoNormalQueueD(current);
 		
-		else {
+		else if(current){
 
 			delete current;
 			Canceled = true;
