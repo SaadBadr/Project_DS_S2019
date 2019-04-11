@@ -79,6 +79,13 @@ Restaurant::~Restaurant()
 void Restaurant::InteractiveMode(){
 	int CurrentTimeStep = 1;
 
+
+	int    VIPcounterA =0    , VIPcounterB =0     ,VIPcounterC =0     ,VIPcounterD =0  ,
+		FROZENcounterA = 0 ,FROZENcounterB = 0 ,FROZENcounterC = 0 ,FROZENcounterD = 0  ,
+		NORMALcounterA = 0 ,NORMALcounterB = 0 ,NORMALcounterC = 0 ,NORMALcounterD = 0  ;
+
+
+
 	Io* Test = new Io(this,pGUI);
 	
 	pGUI->PrintMessage("Welcome To interactive mode,click to continue");
@@ -130,6 +137,11 @@ void Restaurant::InteractiveMode(){
 			
 			do {
 
+				if      (front->GetRegion()== A_REG && front->GetType()==TYPE_VIP)  VIPcounterA++;		//  A
+				else if (front->GetRegion()== B_REG && front->GetType()==TYPE_VIP)  VIPcounterB++;		// 	B					
+				else if (front->GetRegion()== C_REG && front->GetType()==TYPE_VIP)  VIPcounterC++;		//  C				
+				else if (front->GetRegion()== D_REG && front->GetType()==TYPE_VIP)  VIPcounterD++;		// 	D	
+
 				VIP[i]->dequeue(order);
 				pGUI->AddOrderForDrawing(order);
 				VIP[i]->enqueue(order);
@@ -152,6 +164,18 @@ void Restaurant::InteractiveMode(){
 
 			do {
 
+				if      (front->GetRegion()== A_REG && front->GetType()==TYPE_FROZ) FROZENcounterA++;		// A
+				else if (front->GetRegion()== A_REG && front->GetType()==TYPE_NRM)  NORMALcounterA++;
+				
+				else if (front->GetRegion()== B_REG && front->GetType()==TYPE_FROZ) FROZENcounterB++;		// B
+				else if (front->GetRegion()== B_REG && front->GetType()==TYPE_NRM)  NORMALcounterB++;		
+				
+				else if (front->GetRegion()== C_REG && front->GetType()==TYPE_FROZ) FROZENcounterC++;		// C
+				else if (front->GetRegion()== C_REG && front->GetType()==TYPE_NRM)  NORMALcounterC++;		
+				
+				else if (front->GetRegion()== D_REG && front->GetType()==TYPE_FROZ) FROZENcounterD++;		// D
+				else if (front->GetRegion()== D_REG && front->GetType()==TYPE_NRM)  NORMALcounterD++;		
+
 				FRZ_NRM[i]->dequeue(order);
 				pGUI->AddOrderForDrawing(order);
 				FRZ_NRM[i]->enqueue(order);
@@ -162,12 +186,15 @@ void Restaurant::InteractiveMode(){
 	}	
 
 		pGUI->UpdateInterface();
+		Test->PrintStatusBar(VIPcounterA,VIPcounterB,VIPcounterC,VIPcounterD,
+							 FROZENcounterA,FROZENcounterB,FROZENcounterC,FROZENcounterD,
+							 NORMALcounterA,NORMALcounterB,NORMALcounterC,NORMALcounterD);
 		pGUI->waitForClick();
 		CurrentTimeStep++;
 		pGUI->ResetDrawingList();
 
 	}
-
+	delete Test ;
 }
 
 void Restaurant::AddtoNormalQueueA(Order *pOrd)
@@ -492,4 +519,26 @@ void Restaurant::SetAutoPromTime(int time){
 int Restaurant::GetAutoPromTime()
 {
 	return AutoPromotionTimeLimit;
+}
+
+void Restaurant :: SetInitialNumOfMOTR(int Av ,int Af ,int An , int Bv ,int Bf ,int Bn , int Cv ,int Cf ,int Cn, int Dv ,int Df ,int Dn){
+
+	ABCD_VFN_motorcycle[0]	= Av , 
+	ABCD_VFN_motorcycle[1]	= Af , 
+	ABCD_VFN_motorcycle[2]	= An , 
+	ABCD_VFN_motorcycle[3]	= Bv , 
+	ABCD_VFN_motorcycle[4]	= Bf , 
+	ABCD_VFN_motorcycle[5]	= Bn , 
+	ABCD_VFN_motorcycle[6]	= Cv , 
+	ABCD_VFN_motorcycle[7]	= Cf , 
+	ABCD_VFN_motorcycle[8]	= Cn , 
+	ABCD_VFN_motorcycle[9]	= Av , 
+	ABCD_VFN_motorcycle[10] = Af , 
+	ABCD_VFN_motorcycle[11] = An ;
+}
+
+
+int Restaurant :: GetInitialNumOfMOTR(int i){
+
+	return ABCD_VFN_motorcycle[i] ;
 }

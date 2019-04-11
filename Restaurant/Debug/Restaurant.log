@@ -1,45 +1,55 @@
-﻿Project file contains ToolsVersion="15.0". This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion="4.0". For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
-  Restaurant.cpp
-c:\users\saadm\documents\github\project_code_s2019\restaurant\generic_ds\tree.h(78): warning C4101: 'elem' : unreferenced local variable
-          c:\users\saadm\documents\github\project_code_s2019\restaurant\generic_ds\tree.h(76) : while compiling class template member function 'bool Tree<T>::pop_largest(T &)'
-          with
-          [
-              T=Order *
-          ]
-          c:\users\saadm\documents\github\project_code_s2019\restaurant\generic_ds\priorityqueue.h(45) : see reference to function template instantiation 'bool Tree<T>::pop_largest(T &)' being compiled
-          with
-          [
-              T=Order *
-          ]
-          c:\users\saadm\documents\github\project_code_s2019\restaurant\generic_ds\tree.h(179) : while compiling class template member function 'Tree<T>::~Tree(void)'
-          with
-          [
-              T=Order *
-          ]
-          c:\users\saadm\documents\github\project_code_s2019\restaurant\rest\restaurant.cpp(14) : see reference to function template instantiation 'Tree<T>::~Tree(void)' being compiled
-          with
-          [
-              T=Order *
-          ]
-          c:\users\saadm\documents\github\project_code_s2019\restaurant\generic_ds\priorityqueue.h(11) : see reference to class template instantiation 'Tree<T>' being compiled
-          with
-          [
-              T=Order *
-          ]
-          c:\users\saadm\documents\github\project_code_s2019\restaurant\rest\restaurant.h(33) : see reference to class template instantiation 'PriorityQueue<T>' being compiled
-          with
-          [
-              T=Order *
-          ]
-c:\users\saadm\documents\github\project_code_s2019\restaurant\generic_ds\tree.h(160): warning C4101: 'elem' : unreferenced local variable
-          c:\users\saadm\documents\github\project_code_s2019\restaurant\generic_ds\tree.h(157) : while compiling class template member function 'bool Tree<T>::get_largest(T &)'
-          with
-          [
-              T=Order *
-          ]
-          c:\users\saadm\documents\github\project_code_s2019\restaurant\generic_ds\priorityqueue.h(38) : see reference to function template instantiation 'bool Tree<T>::get_largest(T &)' being compiled
-          with
-          [
-              T=Order *
-          ]
-  Restaurant.vcxproj -> C:\Users\saadm\Documents\GitHub\Project_Code_S2019\Debug\Restaurant.exe
+﻿Build started 4/11/2019 8:50:13 PM.
+     1>Project "C:\Users\ahmed\Desktop\Project_DS_S2019\Restaurant\Restaurant.vcxproj" on node 2 (Build target(s)).
+       Project file contains ToolsVersion="15.0". This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion="4.0". For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\ahmed\Desktop\Project_DS_S2019\Debug\Restaurant.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\ahmed\Desktop\Project_DS_S2019\Debug\Restaurant.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\ahmed\Desktop\Project_DS_S2019\Debug\Restaurant.lib" /MACHINE:X86 Debug\CMUgraphics.obj
+         Debug\colors.obj
+         Debug\image.obj
+         Debug\jpegload.obj
+         Debug\jcomapi.obj
+         Debug\jcparam.obj
+         Debug\jdapimin.obj
+         Debug\jdapistd.obj
+         Debug\jdatasrc.obj
+         Debug\jdcoefct.obj
+         Debug\jdcolor.obj
+         Debug\jddctmgr.obj
+         Debug\jdhuff.obj
+         Debug\jdinput.obj
+         Debug\jdmainct.obj
+         Debug\jdmarker.obj
+         Debug\jdmaster.obj
+         Debug\jdmerge.obj
+         Debug\jdphuff.obj
+         Debug\jdpostct.obj
+         Debug\jdsample.obj
+         Debug\jdtrans.obj
+         Debug\jerror.obj
+         Debug\jidctflt.obj
+         Debug\jidctfst.obj
+         Debug\jidctint.obj
+         Debug\jidctred.obj
+         Debug\jmemmgr.obj
+         Debug\jmemnobs.obj
+         Debug\jquant1.obj
+         Debug\jquant2.obj
+         Debug\jutils.obj
+         Debug\keyqueue.obj
+         Debug\mousequeue.obj
+         Debug\windowinput.obj
+         Debug\Demo_Main.obj
+         Debug\ArrivalEvent.obj
+         Debug\CancelationEvent.obj
+         Debug\Event.obj
+         Debug\PromotionEvent.obj
+         Debug\GUI.obj
+         Debug\IO.obj
+         Debug\Motorcycle.obj
+         Debug\Order.obj
+         Debug\Restaurant.obj
+         Restaurant.vcxproj -> C:\Users\ahmed\Desktop\Project_DS_S2019\Debug\Restaurant.exe
+     1>Done Building Project "C:\Users\ahmed\Desktop\Project_DS_S2019\Restaurant\Restaurant.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.50

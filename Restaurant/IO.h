@@ -25,6 +25,9 @@ public:
 	void load();
 	void print(); //phase 2...
 	int getEventsNum();
+
+	void PrintStatusBar( int ,int ,int ,int ,int ,int ,int ,int ,int ,int ,int ,int );
+
 	~Io();
 
 };

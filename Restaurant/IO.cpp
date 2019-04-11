@@ -17,10 +17,13 @@ void Io::load(){
 	fileIN >> sn >> sf >> sv; //speed of each type of motorcycle
 
 	//Number of motorcycles or each type for the 4 regions
-	fileIN >> n[0] >> f[0] >> v[0];
+	fileIN >> n[0] >> f[0] >> v[0]; 
 	fileIN >> n[1] >> f[1] >> v[1];
 	fileIN >> n[2] >> f[2] >> v[2];
 	fileIN >> n[3] >> f[3] >> v[3];
+
+	pRest->SetInitialNumOfMOTR(v[0],f[0],n[0],v[1],f[1],n[1],v[2],f[2],n[2],v[3],f[3],n[3]);
+
 	fileIN >> autolimit;	//Auto-promotion time limit(the max time for order to stay in the waiting list)
 	fileIN >> NmberEvent; //Number of expected lines coming after that(it corresponding to number of events
 	pRest->SetAutoPromTime(abs(autolimit));
@@ -90,6 +93,15 @@ void Io::load(){
 
 void Io::print(){
 	//this function will print the final results in the file format given, but needed in phase2 only
+}
+
+void Io::PrintStatusBar(int vA ,int vB ,int vC ,int vD , int fA ,int fB ,int fC ,int fD,int nA ,int nB ,int nC ,int nD )
+{
+	pGUI->PrintMessage("Region A -> VIP orders: "+to_string(vA) +", Frozen orders: "+to_string(fA) +", Normal orders: "+to_string(nA)+", VIP motorcycles: "+to_string(pRest->GetInitialNumOfMOTR(0))+", Frozen motorcycles: "+to_string(pRest->GetInitialNumOfMOTR(1))+", NORMALmotorcycles: "+to_string(pRest->GetInitialNumOfMOTR(2))   )  ;
+	pGUI->PrintMessage2("Region B -> VIP orders: "+to_string(vB) +", Frozen orders: "+to_string(fB) +", Normal orders: "+to_string(nB)+", VIP motorcycles: "+to_string(pRest->GetInitialNumOfMOTR(3))+", Frozen motorcycles: "+to_string(pRest->GetInitialNumOfMOTR(4))+", NORMALmotorcycles: "+to_string(pRest->GetInitialNumOfMOTR(5))   )  ;
+	pGUI->PrintMessage3("Region C -> VIP orders: "+to_string(vC) +", Frozen orders: "+to_string(fC) +", Normal orders: "+to_string(nC)+", VIP motorcycles: "+to_string(pRest->GetInitialNumOfMOTR(6))+", Frozen motorcycles: "+to_string(pRest->GetInitialNumOfMOTR(7))+", NORMALmotorcycles: "+to_string(pRest->GetInitialNumOfMOTR(8))   )  ;
+	pGUI->PrintMessage4("Region D -> VIP orders: "+to_string(vD) +", Frozen orders: "+to_string(fD) +", Normal orders: "+to_string(nD)+", VIP motorcycles: "+to_string(pRest->GetInitialNumOfMOTR(9))+", Frozen motorcycles: "+to_string(pRest->GetInitialNumOfMOTR(10))+", NORMALmotorcycles: "+to_string(pRest->GetInitialNumOfMOTR(11)) )  ;	
+
 }
 
 int Io::getEventsNum(){

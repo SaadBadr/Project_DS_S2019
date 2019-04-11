@@ -101,6 +101,11 @@ public:
 
 	PROG_MODE getGUIMode() const;			//returns the mode of the program
 
+	void PrintMessage2(string msg) const;	//Prints a message on status bar
+	void PrintMessage3(string msg) const;	//Prints a message on status bar
+	void PrintMessage4(string msg) const;	//Prints a message on status bar
+
+
 };
 
 #endif

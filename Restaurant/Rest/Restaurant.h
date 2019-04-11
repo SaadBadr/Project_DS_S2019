@@ -59,9 +59,7 @@ private:
 	//Queue<Order*> DEMO_Queue;	//Important: This is just for demo
 	/// ==>
 	
-	ifstream InputFile ;																	// mine
-	ofstream OutputFile ;																	// mine
-
+	int ABCD_VFN_motorcycle[12] ;									// initial numbers of motorcycles
 
 	//
 	// TODO: Add More Data Members As Needed
@@ -114,6 +112,8 @@ public:
 	// TODO: Add More Member Functions As Needed
 	//
 
+	ifstream InputFile ;
+
 	void AddMototrcycle(Motorcycle * po);
 	//the following will be needed in phase2(serving orders with motorcycles)
 	Motorcycle* GetNormalMotorcycleA();
@@ -130,6 +130,12 @@ public:
 	Motorcycle* GetVIPMotorcycleB();
 	Motorcycle* GetVIPMotorcycleC();
 	Motorcycle* GetVIPMotorcycleD();
+	int GetInitialNumOfMOTR( int i );					// return values from  ( ABCD_VFN )
+	
+	// set values from  ( ABCD_VFN )
+
+	void SetInitialNumOfMOTR(int Av ,int Af ,int An , int Bv ,int Bf ,int Bn , int Cv ,int Cf ,int , int Dv ,int Df ,int Dn);
+
 
 	void SetAutoPromTime(int time);
 	int GetAutoPromTime();
