@@ -74,43 +74,6 @@ Restaurant::~Restaurant()
 // *************************************************ADDING TO ORDERS QUEUES*************************************************
 
 //// ADD TO NORMAL QUEUES
-/*
-void Restaurant::EventsQueueLoop(int TimeStep){
-
-	if(EventsQueue.isEmpty()) return;
-
-	Event* currentEvent;
-	EventsQueue.peekFront(currentEvent);
-
-	while(!EventsQueue.isEmpty() && currentEvent->getEventTime() <= TimeStep){
-
-		EventsQueue.dequeue(currentEvent);
-
-		ArrivalEvent	 * R_ptr = dynamic_cast<ArrivalEvent*>(currentEvent);	   // the event is Arrival
-		CancelationEvent * X_ptr = dynamic_cast<CancelationEvent*>(currentEvent);	 // the event is Cancelation
-		PromotionEvent	 * P_ptr = dynamic_cast<PromotionEvent*>(currentEvent);		// the event is Promotion
-
-		if(R_ptr)
-			R_ptr->Execute(this);
-
-		else if(X_ptr)
-			X_ptr->Execute(this);
-		
-		else if(P_ptr)
-			P_ptr->Execute(this);
-
-		
-		EventsQueue.peekFront(currentEvent);
-
-	
-	}
-		
-
-
-
-
-}
-*/
 
 
 void Restaurant::InteractiveMode(){
@@ -159,7 +122,8 @@ void Restaurant::InteractiveMode(){
 
 		for(int i = 0 ; i < 4 ; i++){
 
-			if(VIP[i]->isEmpty()) continue;
+			if(VIP[i]->isEmpty())
+				continue;
 
 			Order* front;
 			VIP[i]->frontpeek(front);
@@ -168,7 +132,6 @@ void Restaurant::InteractiveMode(){
 
 				VIP[i]->dequeue(order);
 				pGUI->AddOrderForDrawing(order);
-				pGUI->UpdateInterface();
 				VIP[i]->enqueue(order);
 				VIP[i]->frontpeek(order);
 
@@ -191,7 +154,6 @@ void Restaurant::InteractiveMode(){
 
 				FRZ_NRM[i]->dequeue(order);
 				pGUI->AddOrderForDrawing(order);
-				pGUI->UpdateInterface();
 				FRZ_NRM[i]->enqueue(order);
 				FRZ_NRM[i]->peekFront(order);
 
@@ -199,13 +161,12 @@ void Restaurant::InteractiveMode(){
 			
 	}	
 
-
+		pGUI->UpdateInterface();
 		pGUI->waitForClick();
 		CurrentTimeStep++;
 		pGUI->ResetDrawingList();
 
 	}
-
 
 }
 

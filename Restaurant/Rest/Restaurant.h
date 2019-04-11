@@ -53,7 +53,6 @@ private:
 
 	int AutoPromotionTimeLimit;
 
-//	void EventsQueueLoop(int TimeStep);
 
 	/// ==> 
 	//	DEMO-related members. Should be removed in phases 1&2

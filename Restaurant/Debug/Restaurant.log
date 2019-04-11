@@ -1,33 +1,45 @@
-﻿  Demo_Main.cpp
-  ArrivalEvent.cpp
-  CancelationEvent.cpp
-  IO.cpp
-c:\users\tarek\desktop\project_ds_s2019-master\project_ds_s2019-master\restaurant\io.cpp(84): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+﻿Project file contains ToolsVersion="15.0". This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion="4.0". For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
   Restaurant.cpp
-c:\users\tarek\desktop\project_ds_s2019-master\project_ds_s2019-master\restaurant\generic_ds\tree.h(78): warning C4101: 'elem': unreferenced local variable
-  c:\users\tarek\desktop\project_ds_s2019-master\project_ds_s2019-master\restaurant\generic_ds\tree.h(76): note: while compiling class template member function 'bool Tree<T>::pop_largest(T &)'
+c:\users\saadm\documents\github\project_code_s2019\restaurant\generic_ds\tree.h(78): warning C4101: 'elem' : unreferenced local variable
+          c:\users\saadm\documents\github\project_code_s2019\restaurant\generic_ds\tree.h(76) : while compiling class template member function 'bool Tree<T>::pop_largest(T &)'
           with
           [
               T=Order *
           ]
-  c:\users\tarek\desktop\project_ds_s2019-master\project_ds_s2019-master\restaurant\generic_ds\priorityqueue.h(45): note: see reference to function template instantiation 'bool Tree<T>::pop_largest(T &)' being compiled
+          c:\users\saadm\documents\github\project_code_s2019\restaurant\generic_ds\priorityqueue.h(45) : see reference to function template instantiation 'bool Tree<T>::pop_largest(T &)' being compiled
           with
           [
               T=Order *
           ]
-  c:\users\tarek\desktop\project_ds_s2019-master\project_ds_s2019-master\restaurant\generic_ds\priorityqueue.h(27): note: while compiling class template member function 'PriorityQueue<Order *>::PriorityQueue(void)'
-  c:\users\tarek\desktop\project_ds_s2019-master\project_ds_s2019-master\restaurant\rest\restaurant.cpp(12): note: see reference to function template instantiation 'PriorityQueue<Order *>::PriorityQueue(void)' being compiled
-  c:\users\tarek\desktop\project_ds_s2019-master\project_ds_s2019-master\restaurant\rest\restaurant.h(33): note: see reference to class template instantiation 'PriorityQueue<Order *>' being compiled
-c:\users\tarek\desktop\project_ds_s2019-master\project_ds_s2019-master\restaurant\generic_ds\tree.h(160): warning C4101: 'elem': unreferenced local variable
-  c:\users\tarek\desktop\project_ds_s2019-master\project_ds_s2019-master\restaurant\generic_ds\tree.h(157): note: while compiling class template member function 'bool Tree<T>::get_largest(T &)'
+          c:\users\saadm\documents\github\project_code_s2019\restaurant\generic_ds\tree.h(179) : while compiling class template member function 'Tree<T>::~Tree(void)'
           with
           [
               T=Order *
           ]
-  c:\users\tarek\desktop\project_ds_s2019-master\project_ds_s2019-master\restaurant\generic_ds\priorityqueue.h(38): note: see reference to function template instantiation 'bool Tree<T>::get_largest(T &)' being compiled
+          c:\users\saadm\documents\github\project_code_s2019\restaurant\rest\restaurant.cpp(14) : see reference to function template instantiation 'Tree<T>::~Tree(void)' being compiled
           with
           [
               T=Order *
           ]
-  Generating Code...
-  Restaurant.vcxproj -> C:\Users\tarek\Desktop\Project_DS_S2019-master\Project_DS_S2019-master\Debug\Restaurant.exe
+          c:\users\saadm\documents\github\project_code_s2019\restaurant\generic_ds\priorityqueue.h(11) : see reference to class template instantiation 'Tree<T>' being compiled
+          with
+          [
+              T=Order *
+          ]
+          c:\users\saadm\documents\github\project_code_s2019\restaurant\rest\restaurant.h(33) : see reference to class template instantiation 'PriorityQueue<T>' being compiled
+          with
+          [
+              T=Order *
+          ]
+c:\users\saadm\documents\github\project_code_s2019\restaurant\generic_ds\tree.h(160): warning C4101: 'elem' : unreferenced local variable
+          c:\users\saadm\documents\github\project_code_s2019\restaurant\generic_ds\tree.h(157) : while compiling class template member function 'bool Tree<T>::get_largest(T &)'
+          with
+          [
+              T=Order *
+          ]
+          c:\users\saadm\documents\github\project_code_s2019\restaurant\generic_ds\priorityqueue.h(38) : see reference to function template instantiation 'bool Tree<T>::get_largest(T &)' being compiled
+          with
+          [
+              T=Order *
+          ]
+  Restaurant.vcxproj -> C:\Users\saadm\Documents\GitHub\Project_Code_S2019\Debug\Restaurant.exe
