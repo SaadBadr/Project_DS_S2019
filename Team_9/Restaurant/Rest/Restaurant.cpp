@@ -8,7 +8,146 @@ using namespace std;
 
 
 
-Restaurant::Restaurant() 
+bool Restaurant::assign(Order * ord, int timestep){
+	Motorcycle* M_ptr = NULL;
+	if (ord->GetRegion() == A_REG)
+	{
+		if (ord->GetType() == TYPE_NRM)
+		{
+			if (!NormalMotorA.isEmpty())
+				NormalMotorA.dequeue(M_ptr);
+			else if (!VIPMotorA.isEmpty())
+				VIPMotorA.dequeue(M_ptr);
+			else
+				return false;
+		}
+		if (ord->GetType() == TYPE_FROZ) {
+			if (!FrozenMotorA.isEmpty())
+				FrozenMotorA.dequeue(M_ptr);
+			else
+				return false;
+
+		}
+		if (ord->GetType() == TYPE_VIP) {
+			if (!VIPMotorA.isEmpty())
+				VIPMotorA.dequeue(M_ptr);
+			else if (!NormalMotorA.isEmpty())
+				NormalMotorA.dequeue(M_ptr);
+			else if (!FrozenMotorA.isEmpty())
+				FrozenMotorA.dequeue(M_ptr);
+			else
+				return false;
+		}
+	}
+	else if (ord->GetRegion() == B_REG)
+	{
+		if (ord->GetType() == TYPE_NRM)
+		{
+			if (!NormalMotorA.isEmpty())
+
+				NormalMotorA.dequeue(M_ptr);
+
+			else if (!VIPMotorA.isEmpty())
+				VIPMotorA.dequeue(M_ptr);
+
+			else
+				return false;
+
+		}
+		if (ord->GetType() == TYPE_FROZ) {
+			if (!FrozenMotorA.isEmpty())
+				FrozenMotorA.dequeue(M_ptr);
+			else
+				return false;
+
+		}
+		if (ord->GetType() == TYPE_VIP) {
+			if (!VIPMotorA.isEmpty())
+				VIPMotorA.dequeue(M_ptr);
+			else if (!NormalMotorA.isEmpty())
+				NormalMotorA.dequeue(M_ptr);
+			else if (!FrozenMotorA.isEmpty())
+				FrozenMotorA.dequeue(M_ptr);
+			else
+				return false;
+		}
+	}
+	else if (ord->GetRegion() == C_REG)
+	{
+		if (ord->GetType() == TYPE_NRM)
+		{
+			if (!NormalMotorA.isEmpty())
+
+				NormalMotorA.dequeue(M_ptr);
+
+			else if (!VIPMotorA.isEmpty())
+				VIPMotorA.dequeue(M_ptr);
+
+			else
+				return false;
+
+		}
+		if (ord->GetType() == TYPE_FROZ) {
+			if (!FrozenMotorA.isEmpty())
+				FrozenMotorA.dequeue(M_ptr);
+			else
+				return false;
+
+		}
+		if (ord->GetType() == TYPE_VIP) {
+			if (!VIPMotorA.isEmpty())
+				VIPMotorA.dequeue(M_ptr);
+			else if (!NormalMotorA.isEmpty())
+				NormalMotorA.dequeue(M_ptr);
+			else if (!FrozenMotorA.isEmpty())
+				FrozenMotorA.dequeue(M_ptr);
+			else
+				return false;
+		}
+	}
+	else
+	{
+	if (ord->GetType() == TYPE_NRM)
+	{
+		if (!NormalMotorA.isEmpty())
+
+			NormalMotorA.dequeue(M_ptr);
+
+		else if (!VIPMotorA.isEmpty())
+			VIPMotorA.dequeue(M_ptr);
+
+		else
+			return false;
+
+	}
+	if (ord->GetType() == TYPE_FROZ) {
+		if (!FrozenMotorA.isEmpty())
+			FrozenMotorA.dequeue(M_ptr);
+		else
+			return false;
+
+	}
+	if (ord->GetType() == TYPE_VIP) {
+		if (!VIPMotorA.isEmpty())
+			VIPMotorA.dequeue(M_ptr);
+		else if (!NormalMotorA.isEmpty())
+			NormalMotorA.dequeue(M_ptr);
+		else if (!FrozenMotorA.isEmpty())
+			FrozenMotorA.dequeue(M_ptr);
+		else
+			return false;
+	}
+	}
+	M_ptr->setID(ord->GetID());
+	M_ptr->setStatus(SERV);
+	ord->SetST(ceil((float)ord->GetDistance() / (M_ptr->GetSpeed())));
+	ord->SetFT(ord->GetWT() + ord->GetArrTime() + ord->GetServTime());
+	M_ptr->SetReturnTime(ord->GetServTime() + ord->GetFinishTime());
+	InServiceMotorA.enqueue(M_ptr);
+	return true;
+}
+
+Restaurant::Restaurant()
 {
 	pGUI = NULL;
 }
@@ -64,7 +203,7 @@ void Restaurant::ExecuteEvents(int CurrentTimeStep)
 
 Restaurant::~Restaurant()
 {
-		delete pGUI;
+	delete pGUI;
 }
 
 
@@ -97,15 +236,39 @@ void Restaurant::InteractiveMode(){
 	
 	while(!EventsQueue.isEmpty()){
 
-
+		Motorcycle* M_ptrA, *M_ptrB, *M_ptrC, *M_ptrD;
+		InServiceMotorA.frontpeek(M_ptrA);
+		InServiceMotorA.frontpeek(M_ptrB);
+		InServiceMotorA.frontpeek(M_ptrC);
+		InServiceMotorA.frontpeek(M_ptrD);
+		while (!InServiceMotorA.isEmpty() && M_ptrA->getRT() <= CurrentTimeStep) {
+			AddMototrcycle(M_ptrA);
+			InServiceMotorA.dequeue(M_ptrA);
+			InServiceMotorA.frontpeek(M_ptrA);
+		}
+		while (!InServiceMotorB.isEmpty() && M_ptrB->getRT() <= CurrentTimeStep) {
+			AddMototrcycle(M_ptrB);
+			InServiceMotorB.dequeue(M_ptrB);
+			InServiceMotorB.frontpeek(M_ptrB);
+		}
+		while (!InServiceMotorC.isEmpty() && M_ptrC->getRT() <= CurrentTimeStep) {
+			AddMototrcycle(M_ptrC);
+			InServiceMotorC.dequeue(M_ptrC);
+			InServiceMotorC.frontpeek(M_ptrC);
+		}
+		while (!InServiceMotorD.isEmpty() && M_ptrD->getRT() <= CurrentTimeStep) {
+			AddMototrcycle(M_ptrD);
+			InServiceMotorD.dequeue(M_ptrD);
+			InServiceMotorD.frontpeek(M_ptrD);
+		}
 		Order* order;
-
+		 
 		Queue<Order*>* FRZ_NRM[8] = { &FrozenQueueA, &FrozenQueueB, &FrozenQueueC, &FrozenQueueD, &NormalQueueA, &NormalQueueB, &NormalQueueC, &NormalQueueD} ;
 		PriorityQueue<Order*>* VIP[4] = { &VIPQueueA , &VIPQueueB, &VIPQueueC, &VIPQueueD} ;
 
+		
 
-
-		if(CurrentTimeStep > 1){
+		/*if(CurrentTimeStep > 1){
 
 			for (int i = 0; i < 4; i++)
 			{
@@ -121,7 +284,7 @@ void Restaurant::InteractiveMode(){
 			
 			order = NULL;
 		}
-
+*/
 		ExecuteEvents(CurrentTimeStep);
 
 
@@ -143,8 +306,19 @@ void Restaurant::InteractiveMode(){
 				else if (front->GetRegion()== D_REG && front->GetType()==TYPE_VIP)  VIPcounterD++;		// 	D	
 
 				VIP[i]->dequeue(order);
-				pGUI->AddOrderForDrawing(order);
-				VIP[i]->enqueue(order);
+
+				if (assign(order, CurrentTimeStep)) {
+					delete order;
+					order = NULL;
+				}
+
+				else {
+					order->SetWT(order->GetWT()+1);
+					pGUI->AddOrderForDrawing(order);
+					VIP[i]->enqueue(order);
+
+				}
+
 				VIP[i]->frontpeek(order);
 
 			}while(order != front);
@@ -176,9 +350,23 @@ void Restaurant::InteractiveMode(){
 				else if (front->GetRegion()== D_REG && front->GetType()==TYPE_FROZ) FROZENcounterD++;		// D
 				else if (front->GetRegion()== D_REG && front->GetType()==TYPE_NRM)  NORMALcounterD++;		
 
+
 				FRZ_NRM[i]->dequeue(order);
-				pGUI->AddOrderForDrawing(order);
-				FRZ_NRM[i]->enqueue(order);
+
+				if (assign(order, CurrentTimeStep)) {
+					delete order;
+					order = NULL;
+				}
+
+				else {
+					order->SetWT(order->GetWT() + 1);
+					pGUI->AddOrderForDrawing(order);
+					FRZ_NRM[i]->enqueue(order);
+					if (order->GetType() == TYPE_NRM && order->GetWT() >= Test->getEventsNum()) {
+						PromotionEvent* auto_prom = new PromotionEvent(CurrentTimeStep, order->GetID());
+					}
+				}
+
 				FRZ_NRM[i]->peekFront(order);
 
 			}while(order != front);
@@ -194,6 +382,7 @@ void Restaurant::InteractiveMode(){
 		pGUI->ResetDrawingList();
 
 	}
+	Test->print(VIPcounterA, VIPcounterB, VIPcounterC, VIPcounterD,FROZENcounterA, FROZENcounterB, FROZENcounterC, FROZENcounterD,NORMALcounterA,NORMALcounterB, NORMALcounterC, NORMALcounterD);
 	delete Test ;
 }
 
@@ -356,7 +545,6 @@ Order* Restaurant::PeekNormalQueueD(){
 
 }
 
-/// ==> end of DEMO-related function
 
 void Restaurant :: StoreInputFile () 
 {
@@ -537,8 +725,8 @@ void Restaurant :: SetInitialNumOfMOTR(int Av ,int Af ,int An , int Bv ,int Bf ,
 	ABCD_VFN_motorcycle[11] = An ;
 }
 
-
 int Restaurant :: GetInitialNumOfMOTR(int i){
 
 	return ABCD_VFN_motorcycle[i] ;
 }
+

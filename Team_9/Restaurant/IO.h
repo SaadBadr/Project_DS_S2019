@@ -19,11 +19,12 @@ private:
 	GUI* pGUI;
 	ifstream fileIN;
 	ofstream fileOUT;
-	int NmberEvent;
+	int NmberEvent, vO[4], nO[4], fO[4], vM[4], nM[4], fM[4];
+	int sum(int*x, int size);
 public:
 	Io(Restaurant* pR, GUI* pG);
 	void load();
-	void print(); //phase 2...
+	void print(int, int, int, int, int, int, int, int, int, int, int, int); //phase 2...
 	int getEventsNum();
 
 	void PrintStatusBar( int ,int ,int ,int ,int ,int ,int ,int ,int ,int ,int ,int );

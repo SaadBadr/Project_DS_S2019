@@ -1,5 +1,10 @@
 #include "IO.h"
-
+#include<ctime>
+int Io::sum(int * x, int size){
+	int sum = 0;
+	for (int i = 0; i < size; i++) { sum += x[i]; }
+	return sum;
+}
 Io::Io(Restaurant * pR, GUI * pG):pRest(pR),pGUI(pG){}
 
 void Io::load(){
@@ -12,36 +17,36 @@ void Io::load(){
 		fileIN.open(FileName + ".txt");
 	}
 	
-	int sn, sf, sv, n[4], f[4], v[4],autolimit;
+	int sn, sf, sv, autolimit;
 	Motorcycle*motornorm, *motorfroz, *motorvip;
 	fileIN >> sn >> sf >> sv; //speed of each type of motorcycle
 
 	//Number of motorcycles or each type for the 4 regions
-	fileIN >> n[0] >> f[0] >> v[0]; 
-	fileIN >> n[1] >> f[1] >> v[1];
-	fileIN >> n[2] >> f[2] >> v[2];
-	fileIN >> n[3] >> f[3] >> v[3];
+	fileIN >> nM[0] >> fM[0] >> vM[0]; 
+	fileIN >> nM[1] >> fM[1] >> vM[1];
+	fileIN >> nM[2] >> fM[2] >> vM[2];
+	fileIN >> nM[3] >> fM[3] >> vM[3];
 
-	pRest->SetInitialNumOfMOTR(v[0],f[0],n[0],v[1],f[1],n[1],v[2],f[2],n[2],v[3],f[3],n[3]);
+	pRest->SetInitialNumOfMOTR(vM[0],fM[0],nM[0],vM[1],fM[1],nM[1],vM[2],fM[2],nM[2],vM[3],fM[3],nM[3]);
 
 	fileIN >> autolimit;	//Auto-promotion time limit(the max time for order to stay in the waiting list)
 	fileIN >> NmberEvent; //Number of expected lines coming after that(it corresponding to number of events
 	pRest->SetAutoPromTime(abs(autolimit));
 	
-	for (int i = 0; i < abs(n[0]); i++) {motornorm = new Motorcycle(abs(sn), A_REG); pRest->AddMototrcycle(motornorm); motornorm = NULL;}
-	for (int i = 0; i < abs(n[1]); i++) {motornorm = new Motorcycle(abs(sn), A_REG); pRest->AddMototrcycle(motornorm); motornorm = NULL;}
-	for (int i = 0; i < abs(n[2]); i++) {motornorm = new Motorcycle(abs(sn), A_REG); pRest->AddMototrcycle(motornorm); motornorm = NULL;}
-	for (int i = 0; i < abs(n[3]); i++) {motornorm = new Motorcycle(abs(sn), A_REG); pRest->AddMototrcycle(motornorm); motornorm = NULL;}
+	for (int i = 0; i < abs(nM[0]); i++) {motornorm = new Motorcycle(abs(sn), A_REG); pRest->AddMototrcycle(motornorm); motornorm = NULL;}
+	for (int i = 0; i < abs(nM[1]); i++) {motornorm = new Motorcycle(abs(sn), A_REG); pRest->AddMototrcycle(motornorm); motornorm = NULL;}
+	for (int i = 0; i < abs(nM[2]); i++) {motornorm = new Motorcycle(abs(sn), A_REG); pRest->AddMototrcycle(motornorm); motornorm = NULL;}
+	for (int i = 0; i < abs(nM[3]); i++) {motornorm = new Motorcycle(abs(sn), A_REG); pRest->AddMototrcycle(motornorm); motornorm = NULL;}
 						
-	for (int i = 0; i < abs(f[0]); i++) { motorfroz = new Motorcycle(abs(sf), A_REG); pRest->AddMototrcycle(motorfroz); motorfroz = NULL;}
-	for (int i = 0; i < abs(f[1]); i++) { motorfroz = new Motorcycle(abs(sf), B_REG); pRest->AddMototrcycle(motorfroz); motorfroz = NULL;}
-	for (int i = 0; i < abs(f[2]); i++) { motorfroz = new Motorcycle(abs(sf), C_REG); pRest->AddMototrcycle(motorfroz); motorfroz = NULL;}
-	for (int i = 0; i < abs(f[3]); i++) { motorfroz = new Motorcycle(abs(sf), D_REG); pRest->AddMototrcycle(motorfroz); motorfroz = NULL;}
+	for (int i = 0; i < abs(fM[0]); i++) { motorfroz = new Motorcycle(abs(sf), A_REG); pRest->AddMototrcycle(motorfroz); motorfroz = NULL;}
+	for (int i = 0; i < abs(fM[1]); i++) { motorfroz = new Motorcycle(abs(sf), B_REG); pRest->AddMototrcycle(motorfroz); motorfroz = NULL;}
+	for (int i = 0; i < abs(fM[2]); i++) { motorfroz = new Motorcycle(abs(sf), C_REG); pRest->AddMototrcycle(motorfroz); motorfroz = NULL;}
+	for (int i = 0; i < abs(fM[3]); i++) { motorfroz = new Motorcycle(abs(sf), D_REG); pRest->AddMototrcycle(motorfroz); motorfroz = NULL;}
 						
-	for (int i = 0; i < abs(v[0]); i++) { motorvip = new Motorcycle(abs(sv), A_REG); pRest->AddMototrcycle(motorvip); motorvip = NULL;}
-	for (int i = 0; i < abs(v[1]); i++) { motorvip = new Motorcycle(abs(sv), B_REG); pRest->AddMototrcycle(motorvip); motorvip = NULL;}
-	for (int i = 0; i < abs(v[2]); i++) { motorvip = new Motorcycle(abs(sv), C_REG); pRest->AddMototrcycle(motorvip); motorvip = NULL;}
-	for (int i = 0; i < abs(v[3]); i++) { motorvip = new Motorcycle(abs(sv), D_REG); pRest->AddMototrcycle(motorvip); motorvip = NULL;}
+	for (int i = 0; i < abs(vM[0]); i++) { motorvip = new Motorcycle(abs(sv), A_REG); pRest->AddMototrcycle(motorvip); motorvip = NULL;}
+	for (int i = 0; i < abs(vM[1]); i++) { motorvip = new Motorcycle(abs(sv), B_REG); pRest->AddMototrcycle(motorvip); motorvip = NULL;}
+	for (int i = 0; i < abs(vM[2]); i++) { motorvip = new Motorcycle(abs(sv), C_REG); pRest->AddMototrcycle(motorvip); motorvip = NULL;}
+	for (int i = 0; i < abs(vM[3]); i++) { motorvip = new Motorcycle(abs(sv), D_REG); pRest->AddMototrcycle(motorvip); motorvip = NULL;}
 
 	Event* pArrive;		CancelationEvent* pCancel;		PromotionEvent* pPromote;
 	
@@ -91,8 +96,40 @@ void Io::load(){
 	//fileIN.close();
 }
 
-void Io::print(){
-	//this function will print the final results in the file format given, but needed in phase2 only
+void Io::print(int VIPOA, int VIPOB, int VIPOC, int VIPOD, int FrozOA, int FrozOB, int FrozOC, int FrozOD, int NormOA, int NormOB, int NormOC, int NormOD){
+	nO[0] = NormOA;	nO[1] = NormOB;	nO[2] = NormOC;	nO[3] = NormOD;
+	fO[0] = FrozOA;	fO[1] = FrozOB;	fO[2] = FrozOC;	fO[3] = FrozOD;
+	vO[0] = VIPOA;	vO[1] = VIPOB;	vO[2] = VIPOC;	vO[3] = VIPOD;
+	srand(time(0));
+	int x = rand()%101;
+	fileOUT.open("OutputFile"+to_string(x)+".txt");
+	fileOUT << "FT ID AT WT ST" << endl;
+	for (int i = 0; i < 4; i++) {
+		switch (i) {
+		case 0:
+			fileOUT << "Region A:" << endl;
+			break;
+		case 1:
+			fileOUT << "Region B:" << endl;
+			break;
+		case 2:
+			fileOUT << "Region C:" << endl;
+			break;
+		case 3:
+			fileOUT << "Region D:" << endl;
+			break;
+		}
+		fileOUT << "Orders: " << (nO[i] + fO[i] + vO[i]) << " " << "[Norm:" << nO[i] << ", Froz:" << fO[i] << ", VIP:" << vO[i] << "]" << endl;
+		fileOUT << "MotorC: " << (nM[i] + fM[i] + vM[i]) << " " << "[Norm:" << nM[i] << ", Froz:" << fM[i] << ", VIP:" << vM[i] << "]" << endl;
+		fileOUT << "Avg Wait = 111" << ", Avg Serv = 111" << endl; // this will be modified
+	}
+	int totalNormal = sum(nO, 4), totalFrozen = sum(fO, 4), totalVIP = sum(vO, 4);
+	int totalNMotor = sum(nM, 4), totalFMototr = sum(fM, 4), totalVMototr = sum(vM, 4);
+	fileOUT << "For Whole Resturant:" << endl;
+	fileOUT<<"Orders: "<<(totalNormal+totalFrozen+totalVIP)<<" "<< "[Norm:" << totalNormal << ", Froz:" << totalFrozen << ", VIP:" << totalVIP << "]" << endl;
+	fileOUT<< "MotorC: " << (totalFMototr+totalNMotor+totalVMototr) << " " << "[Norm:" << totalNMotor << ", Froz:" << totalFMototr << ", VIP:" << totalVMototr << "]" << endl;
+	fileOUT << "Avg Wait = 111" << ", Avg Serv = 111"; // this will be modified
+	fileOUT.close();
 }
 
 void Io::PrintStatusBar(int vA ,int vB ,int vC ,int vD , int fA ,int fB ,int fC ,int fD,int nA ,int nB ,int nC ,int nD )

@@ -56,9 +56,31 @@ void Motorcycle::setStatus(STATUS  st){
 	status = st;
 }
 
+void Motorcycle::SetReturnTime(int x){
+	ReturnTime = x;
+}
+
 //*************************************************Destractor************************************************
 
 
 Motorcycle::~Motorcycle(){
 
 }
+
+int Motorcycle::getRT()
+{
+	return ReturnTime;
+}
+
+bool Motorcycle::operator>(Motorcycle x){
+	return ReturnTime < x.ReturnTime;
+}
+
+bool Motorcycle::operator<(Motorcycle x){
+	return ReturnTime > x.ReturnTime;
+}
+
+bool Motorcycle::operator==(Motorcycle x){
+	return ReturnTime == x.ReturnTime;
+}
+

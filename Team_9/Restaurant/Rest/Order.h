@@ -14,12 +14,12 @@ protected:
 	                
 	double totalMoney;	//Total order money
 
-	int ArrTime, ServTime, FinishTime;	//arrival, service start, and finish times
+	int ArrTime, ServTime, FinishTime, WaitingTime;	//arrival, service start, and finish times
 	
 	double priority;
 
 public:
-	Order(int ID, ORD_TYPE r_Type, REGION r_region, double totmoney = 0, int dist = 0, int arrTime = 0);
+	Order(int ID, ORD_TYPE r_Type, REGION r_region, double totmoney = 0, int dist = 0, int arrTime = 0, int WT = 0);
 	virtual ~Order();
 
 	int GetID();
@@ -27,12 +27,18 @@ public:
 	int GetType() const;
 	REGION GetRegion() const;
 
+	void SetST(int x);
+	void SetFT(int x);
+	void SetWT(int x);
+	int GetWT();
 	void SetDistance(int d);
 	int GetDistance() const;
 
 	void SetMoney (double m) ;													// mine
-	int  GetMoney () ;															// mine
-	int  GetArrTime () ;														// mine
+	int GetMoney ();															// mine
+	int GetArrTime ();														// mine
+	int GetServTime();
+	int GetFinishTime();
 
 	bool operator >  (Order) ;													// we will use it for VIP
 	bool operator <  (Order) ; 													// we will use it for VIP

@@ -12,6 +12,7 @@ class Motorcycle
 	int speed;		//meters it can move in one clock tick (in one timestep)
 	REGION	region;	//region of the motorcycle
 	STATUS	status;	//idle or in-service
+	int ReturnTime;
 
 public:
 	Motorcycle();
@@ -24,7 +25,14 @@ public:
 	void setID(int id);
 	void setType(ORD_TYPE typ);
 	void setStatus(STATUS st);
+	void SetReturnTime(int x);
 	virtual ~Motorcycle();
+	int getRT();
+	bool operator >  (Motorcycle x);												
+	bool operator <  (Motorcycle x); 												
+	bool operator == (Motorcycle x); 												
+
+
 };
 
 #endif

@@ -1,12 +1,5 @@
-﻿  Demo_Main.cpp
-  ArrivalEvent.cpp
-  CancelationEvent.cpp
-  GUI.cpp
-  IO.cpp
-c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\io.cpp(87): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-  Order.cpp
-c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\rest\order.cpp(46): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-  Restaurant.cpp
+﻿  Restaurant.cpp
+c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\rest\restaurant.cpp(143): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\generic_ds\tree.h(78): warning C4101: 'elem': unreferenced local variable
   c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\generic_ds\tree.h(76): note: while compiling class template member function 'bool Tree<T>::pop_largest(T &)'
           with
@@ -19,7 +12,7 @@ c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\resta
               T=Order *
           ]
   c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\generic_ds\priorityqueue.h(27): note: while compiling class template member function 'PriorityQueue<Order *>::PriorityQueue(void)'
-  c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\rest\restaurant.cpp(12): note: see reference to function template instantiation 'PriorityQueue<Order *>::PriorityQueue(void)' being compiled
+  c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\rest\restaurant.cpp(151): note: see reference to function template instantiation 'PriorityQueue<Order *>::PriorityQueue(void)' being compiled
   c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\rest\restaurant.h(33): note: see reference to class template instantiation 'PriorityQueue<Order *>' being compiled
 c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\generic_ds\tree.h(160): warning C4101: 'elem': unreferenced local variable
   c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\generic_ds\tree.h(157): note: while compiling class template member function 'bool Tree<T>::get_largest(T &)'
@@ -32,5 +25,4 @@ c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\resta
           [
               T=Order *
           ]
-  Generating Code...
   Restaurant.vcxproj -> C:\Users\tarek\Desktop\Data_Structre_project_CMP22\Project_DS_S2019\Team_9\Debug\Restaurant.exe

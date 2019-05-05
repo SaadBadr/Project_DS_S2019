@@ -53,17 +53,18 @@ private:
 
 	int AutoPromotionTimeLimit;
 
-
+	PriorityQueue<Motorcycle*> InServiceMotorA;
+	PriorityQueue<Motorcycle*> InServiceMotorB;
+	PriorityQueue<Motorcycle*> InServiceMotorC;
+	PriorityQueue<Motorcycle*> InServiceMotorD;
 	/// ==> 
 	//	DEMO-related members. Should be removed in phases 1&2
 	//Queue<Order*> DEMO_Queue;	//Important: This is just for demo
 	/// ==>
 	
 	int ABCD_VFN_motorcycle[12] ;									// initial numbers of motorcycles
-
-	//
-	// TODO: Add More Data Members As Needed
-	//
+	
+	bool assign(Order * ord, int timestep);
 
 public:
 	
@@ -135,7 +136,7 @@ public:
 	// set values from  ( ABCD_VFN )
 
 	void SetInitialNumOfMOTR(int Av ,int Af ,int An , int Bv ,int Bf ,int Bn , int Cv ,int Cf ,int , int Dv ,int Df ,int Dn);
-
+	//Order* getMinimumFT();
 
 	void SetAutoPromTime(int time);
 	int GetAutoPromTime();

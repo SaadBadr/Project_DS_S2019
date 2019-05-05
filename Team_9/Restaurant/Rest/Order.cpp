@@ -5,7 +5,7 @@
 //*************************************************Constructors************************************************
 
 
-Order::Order(int id, ORD_TYPE r_Type, REGION r_region, double totmoney, int dist, int arrTime){
+Order::Order(int id, ORD_TYPE r_Type, REGION r_region, double totmoney, int dist , int arrTime , int WT ){
 
 	SetDistance(dist);
 	SetMoney(totmoney);
@@ -25,6 +25,25 @@ Order::~Order(){
 int Order::GetID(){
 	
 	return ID;
+}
+
+
+void Order::SetST(int x) {
+	
+	ServTime = x;
+
+}
+void Order::SetFT(int x) {
+
+	FinishTime = x;
+}
+
+void Order::SetWT(int x){
+	WaitingTime = x;
+}
+
+int Order::GetWT(){
+	return WaitingTime;
 }
 
 
@@ -49,6 +68,16 @@ int Order::GetMoney(){
 int Order::GetArrTime(){
 
 	return ArrTime;
+}
+
+int Order::GetServTime()
+{
+	return ServTime;
+}
+
+int Order::GetFinishTime()
+{
+	return FinishTime;
 }
 
 int Order::GetDistance() const{
