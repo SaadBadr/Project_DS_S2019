@@ -1,28 +1,119 @@
-﻿  Restaurant.cpp
-c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\rest\restaurant.cpp(143): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\generic_ds\tree.h(78): warning C4101: 'elem': unreferenced local variable
-  c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\generic_ds\tree.h(76): note: while compiling class template member function 'bool Tree<T>::pop_largest(T &)'
+﻿Project file contains ToolsVersion="15.0". This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion="4.0". For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
+  Restaurant.cpp
+c:\users\saadm\documents\github\ds\team_9\restaurant\rest\restaurant.cpp(143): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+c:\users\saadm\documents\github\ds\team_9\restaurant\generic_ds\tree.h(78): warning C4101: 'elem' : unreferenced local variable
+          c:\users\saadm\documents\github\ds\team_9\restaurant\generic_ds\tree.h(76) : while compiling class template member function 'bool Tree<T>::pop_largest(T &)'
           with
           [
               T=Order *
           ]
-  c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\generic_ds\priorityqueue.h(45): note: see reference to function template instantiation 'bool Tree<T>::pop_largest(T &)' being compiled
+          c:\users\saadm\documents\github\ds\team_9\restaurant\generic_ds\priorityqueue.h(45) : see reference to function template instantiation 'bool Tree<T>::pop_largest(T &)' being compiled
           with
           [
               T=Order *
           ]
-  c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\generic_ds\priorityqueue.h(27): note: while compiling class template member function 'PriorityQueue<Order *>::PriorityQueue(void)'
-  c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\rest\restaurant.cpp(151): note: see reference to function template instantiation 'PriorityQueue<Order *>::PriorityQueue(void)' being compiled
-  c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\rest\restaurant.h(33): note: see reference to class template instantiation 'PriorityQueue<Order *>' being compiled
-c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\generic_ds\tree.h(160): warning C4101: 'elem': unreferenced local variable
-  c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\generic_ds\tree.h(157): note: while compiling class template member function 'bool Tree<T>::get_largest(T &)'
+          c:\users\saadm\documents\github\ds\team_9\restaurant\generic_ds\tree.h(179) : while compiling class template member function 'Tree<T>::~Tree(void)'
           with
           [
               T=Order *
           ]
-  c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\generic_ds\priorityqueue.h(38): note: see reference to function template instantiation 'bool Tree<T>::get_largest(T &)' being compiled
+          c:\users\saadm\documents\github\ds\team_9\restaurant\rest\restaurant.cpp(153) : see reference to function template instantiation 'Tree<T>::~Tree(void)' being compiled
           with
           [
               T=Order *
           ]
-  Restaurant.vcxproj -> C:\Users\tarek\Desktop\Data_Structre_project_CMP22\Project_DS_S2019\Team_9\Debug\Restaurant.exe
+          c:\users\saadm\documents\github\ds\team_9\restaurant\generic_ds\priorityqueue.h(11) : see reference to class template instantiation 'Tree<T>' being compiled
+          with
+          [
+              T=Order *
+          ]
+          c:\users\saadm\documents\github\ds\team_9\restaurant\rest\restaurant.h(33) : see reference to class template instantiation 'PriorityQueue<T>' being compiled
+          with
+          [
+              T=Order *
+          ]
+c:\users\saadm\documents\github\ds\team_9\restaurant\generic_ds\tree.h(160): warning C4101: 'elem' : unreferenced local variable
+          c:\users\saadm\documents\github\ds\team_9\restaurant\generic_ds\tree.h(157) : while compiling class template member function 'bool Tree<T>::get_largest(T &)'
+          with
+          [
+              T=Order *
+          ]
+          c:\users\saadm\documents\github\ds\team_9\restaurant\generic_ds\priorityqueue.h(38) : see reference to function template instantiation 'bool Tree<T>::get_largest(T &)' being compiled
+          with
+          [
+              T=Order *
+          ]
+  Order.cpp
+c:\users\saadm\documents\github\ds\team_9\restaurant\rest\order.cpp(65): warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
+  Motorcycle.cpp
+  IO.cpp
+c:\users\saadm\documents\github\ds\team_9\restaurant\io.cpp(92): warning C4244: 'argument' : conversion from 'double' to 'const int', possible loss of data
+c:\users\saadm\documents\github\ds\team_9\restaurant\io.cpp(103): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+  GUI.cpp
+  PromotionEvent.cpp
+  Event.cpp
+  CancelationEvent.cpp
+  ArrivalEvent.cpp
+  Demo_Main.cpp
+  windowinput.cpp
+  mousequeue.cpp
+  keyqueue.cpp
+  image.cpp
+c:\users\saadm\documents\github\ds\team_9\restaurant\cmugraphicslib\image.cpp(115): warning C4018: '<' : signed/unsigned mismatch
+  colors.cpp
+  CMUgraphics.cpp
+c:\users\saadm\documents\github\ds\team_9\restaurant\cmugraphicslib\cmugraphics.cpp(751): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : see declaration of 'strcpy'
+c:\users\saadm\documents\github\ds\team_9\restaurant\cmugraphicslib\cmugraphics.cpp(1164): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+c:\users\saadm\documents\github\ds\team_9\restaurant\cmugraphicslib\cmugraphics.cpp(1171): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+c:\users\saadm\documents\github\ds\team_9\restaurant\cmugraphicslib\cmugraphics.cpp(1202): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+c:\users\saadm\documents\github\ds\team_9\restaurant\cmugraphicslib\cmugraphics.cpp(1210): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+c:\users\saadm\documents\github\ds\team_9\restaurant\cmugraphicslib\cmugraphics.cpp(1357): warning C4018: '>' : signed/unsigned mismatch
+  Generating Code...
+  jutils.c
+  jquant2.c
+  jquant1.c
+  jmemnobs.c
+  jmemmgr.c
+c:\users\saadm\documents\github\ds\team_9\restaurant\cmugraphicslib\jpeg\jmemmgr.c(1103): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdlib.h(449) : see declaration of 'getenv'
+c:\users\saadm\documents\github\ds\team_9\restaurant\cmugraphicslib\jpeg\jmemmgr.c(1106): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(311) : see declaration of 'sscanf'
+  jidctred.c
+  jidctint.c
+  jidctfst.c
+  jidctflt.c
+  jerror.c
+c:\users\saadm\documents\github\ds\team_9\restaurant\cmugraphicslib\jpeg\jerror.c(169): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+c:\users\saadm\documents\github\ds\team_9\restaurant\cmugraphicslib\jpeg\jerror.c(175): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+  jdtrans.c
+  jdsample.c
+  jdpostct.c
+  jdphuff.c
+  jdmerge.c
+  jdmaster.c
+  jdmarker.c
+  jdmainct.c
+  jdinput.c
+  jdhuff.c
+  Generating Code...
+  Compiling...
+  jddctmgr.c
+  jdcolor.c
+  jdcoefct.c
+  jdatasrc.c
+  jdapistd.c
+  jdapimin.c
+  jcparam.c
+  jcomapi.c
+  jpegload.c
+c:\users\saadm\documents\github\ds\team_9\restaurant\cmugraphicslib\jpegload.c(23): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(218) : see declaration of 'fopen'
+  Generating Code...
+  Restaurant.vcxproj -> C:\Users\saadm\Documents\GitHub\DS\Team_9\Debug\Restaurant.exe

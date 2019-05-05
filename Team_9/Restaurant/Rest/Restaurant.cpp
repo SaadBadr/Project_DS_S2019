@@ -362,10 +362,13 @@ void Restaurant::InteractiveMode(){
 					order->SetWT(order->GetWT() + 1);
 					pGUI->AddOrderForDrawing(order);
 					FRZ_NRM[i]->enqueue(order);
-					if (order->GetType() == TYPE_NRM && order->GetWT() >= Test->getEventsNum()) {
-						PromotionEvent* auto_prom = new PromotionEvent(CurrentTimeStep, order->GetID());
+					if (order->GetType() == TYPE_NRM && order->GetWT() >= Test->getEventsNum()){
+						//auto_promotion :
+						VIPQueueA.enqueue(new Order(order->GetID(), TYPE_VIP, order->GetRegion(), order->GetMoney(), order->GetDistance(), order->GetArrTime(), order->GetWT()));
+						delete order;
+						}
+						
 					}
-				}
 
 				FRZ_NRM[i]->peekFront(order);
 
