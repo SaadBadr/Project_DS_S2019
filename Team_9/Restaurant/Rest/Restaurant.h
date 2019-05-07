@@ -11,7 +11,7 @@
 #include "..\Generic_DS\PriorityQueue.h"
 #include "Order.h"
 #include"Motorcycle.h"
-
+#include"..\Generic_DS\List.h"
 // it is the maestro of the project
 
 class Restaurant  
@@ -57,6 +57,8 @@ private:
 	PriorityQueue<Motorcycle*> InServiceMotorB;
 	PriorityQueue<Motorcycle*> InServiceMotorC;
 	PriorityQueue<Motorcycle*> InServiceMotorD;
+
+	List<Order*> AllOrders;
 	/// ==> 
 	//	DEMO-related members. Should be removed in phases 1&2
 	//Queue<Order*> DEMO_Queue;	//Important: This is just for demo
@@ -136,7 +138,8 @@ public:
 	// set values from  ( ABCD_VFN )
 
 	void SetInitialNumOfMOTR(int Av ,int Af ,int An , int Bv ,int Bf ,int Bn , int Cv ,int Cf ,int , int Dv ,int Df ,int Dn);
-	//Order* getMinimumFT();
+	void SortAllOrders(List<Order*>& list);		// sorting all orders for OutputFile
+	Order* GetListFisrtItem();
 
 	void SetAutoPromTime(int time);
 	int GetAutoPromTime();

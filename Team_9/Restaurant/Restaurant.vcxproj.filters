@@ -126,6 +126,9 @@
     <ClInclude Include="IO.h">
       <Filter>Restaurant</Filter>
     </ClInclude>
+    <ClInclude Include="Generic_DS\List.h">
+      <Filter>Generic_DS</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Demo_Main.cpp" />

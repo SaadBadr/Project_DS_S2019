@@ -217,13 +217,11 @@ Restaurant::~Restaurant()
 
 void Restaurant::InteractiveMode(){
 	int CurrentTimeStep = 1;
-
+	int Listcount = 1;
 
 	int    VIPcounterA =0    , VIPcounterB =0     ,VIPcounterC =0     ,VIPcounterD =0  ,
 		FROZENcounterA = 0 ,FROZENcounterB = 0 ,FROZENcounterC = 0 ,FROZENcounterD = 0  ,
 		NORMALcounterA = 0 ,NORMALcounterB = 0 ,NORMALcounterC = 0 ,NORMALcounterD = 0  ;
-
-
 
 	Io* Test = new Io(this,pGUI);
 	
@@ -268,23 +266,6 @@ void Restaurant::InteractiveMode(){
 
 		
 
-		/*if(CurrentTimeStep > 1){
-
-			for (int i = 0; i < 4; i++)
-			{
-				if(VIP[i]->dequeue(order))
-					delete order;
-			}	
-
-			for (int i = 0; i < 8; i++)
-			{
-				if(FRZ_NRM[i]->dequeue(order))
-					delete order;
-			}	
-			
-			order = NULL;
-		}
-*/
 		ExecuteEvents(CurrentTimeStep);
 
 
@@ -297,7 +278,8 @@ void Restaurant::InteractiveMode(){
 
 			Order* front;
 			VIP[i]->frontpeek(front);
-			
+			AllOrders.Insert(front, Listcount);
+			Listcount++;
 			do {
 
 				if      (front->GetRegion()== A_REG && front->GetType()==TYPE_VIP)  VIPcounterA++;		//  A
@@ -335,8 +317,10 @@ void Restaurant::InteractiveMode(){
 
 			Order* front;
 			FRZ_NRM[i]->peekFront(front);
-
+			AllOrders.Insert(front, Listcount);
+			Listcount++;
 			do {
+				
 
 				if      (front->GetRegion()== A_REG && front->GetType()==TYPE_FROZ) FROZENcounterA++;		// A
 				else if (front->GetRegion()== A_REG && front->GetType()==TYPE_NRM)  NORMALcounterA++;
@@ -385,6 +369,7 @@ void Restaurant::InteractiveMode(){
 		pGUI->ResetDrawingList();
 
 	}
+	SortAllOrders(AllOrders);
 	Test->print(VIPcounterA, VIPcounterB, VIPcounterC, VIPcounterD,FROZENcounterA, FROZENcounterB, FROZENcounterC, FROZENcounterD,NORMALcounterA,NORMALcounterB, NORMALcounterC, NORMALcounterD);
 	delete Test ;
 }
@@ -726,6 +711,36 @@ void Restaurant :: SetInitialNumOfMOTR(int Av ,int Af ,int An , int Bv ,int Bf ,
 	ABCD_VFN_motorcycle[9]	= Av , 
 	ABCD_VFN_motorcycle[10] = Af , 
 	ABCD_VFN_motorcycle[11] = An ;
+}
+
+void Restaurant::SortAllOrders(List<Order*>& list){
+	int size = list.getLength();
+	Order* t1 = NULL, *t2 = NULL;
+	for (int i = 1; i < size; i++) {
+		t1 = list.GetItmeAt(i);
+		for (int j = i+1; j <= size; j++) {
+			t2 = list.GetItmeAt(j);
+			if (t1->GetFinishTime() > t2->GetFinishTime()) {
+				list.replace(t1, j);
+				list.replace(t2, i);
+			}
+			else if (t1->GetFinishTime() == t2->GetFinishTime()) {
+				if (t1->GetServTime() > t2->GetServTime()) {
+					list.replace(t1, j);
+					list.replace(t2, i);
+				}
+			}
+		}
+	}
+}
+
+Order * Restaurant::GetListFisrtItem(){
+	if (AllOrders.getLength() > 0) {
+		Order * x = AllOrders.GetItmeAt(1);
+		AllOrders.remove(1);
+		return x;
+	}
+	else return nullptr;
 }
 
 int Restaurant :: GetInitialNumOfMOTR(int i){

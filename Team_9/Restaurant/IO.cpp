@@ -62,20 +62,20 @@ void Io::load(){
 			
 			fileIN >> ts >> type >> id >> dist >> money >> region;
 			
-			if (toupper(type) == 'N' && toupper(region) == 'A') pArrive = new ArrivalEvent(abs(ts), abs(id), TYPE_NRM, A_REG, abs(money));
-			else if (toupper(type) == 'N' && toupper(region) == 'B') pArrive = new ArrivalEvent(abs(ts), abs(id), TYPE_NRM, B_REG, abs(money));
-			else if (toupper(type) == 'N' && toupper(region) == 'C') pArrive = new ArrivalEvent(abs(ts), abs(id), TYPE_NRM, C_REG, abs(money));
-			else if (toupper(type) == 'N' && toupper(region) == 'D') pArrive = new ArrivalEvent(abs(ts), abs(id), TYPE_NRM, D_REG, abs(money));
+			if (toupper(type) == 'N' && toupper(region) == 'A') pArrive = new ArrivalEvent(abs(ts), abs(id), TYPE_NRM, A_REG,dist,abs(money));
+			else if (toupper(type) == 'N' && toupper(region) == 'B') pArrive = new ArrivalEvent(abs(ts), abs(id), TYPE_NRM, B_REG, dist, abs(money));
+			else if (toupper(type) == 'N' && toupper(region) == 'C') pArrive = new ArrivalEvent(abs(ts), abs(id), TYPE_NRM, C_REG, dist, abs(money));
+			else if (toupper(type) == 'N' && toupper(region) == 'D') pArrive = new ArrivalEvent(abs(ts), abs(id), TYPE_NRM, D_REG, dist, abs(money));
 					 																					 
-			else if (toupper(type) == 'F' && toupper(region) == 'A') pArrive = new ArrivalEvent(abs(ts), abs(id), TYPE_FROZ, A_REG, abs(money));
-			else if (toupper(type) == 'F' && toupper(region) == 'B') pArrive = new ArrivalEvent(abs(ts), abs(id), TYPE_FROZ, B_REG, abs(money));
-			else if (toupper(type) == 'F' && toupper(region) == 'C') pArrive = new ArrivalEvent(abs(ts), abs(id), TYPE_FROZ, C_REG, abs(money));
-			else if (toupper(type) == 'F' && toupper(region) == 'D') pArrive = new ArrivalEvent(abs(ts), abs(id), TYPE_FROZ, D_REG, abs(money));
+			else if (toupper(type) == 'F' && toupper(region) == 'A') pArrive = new ArrivalEvent(abs(ts), abs(id), TYPE_FROZ, A_REG, dist, abs(money));
+			else if (toupper(type) == 'F' && toupper(region) == 'B') pArrive = new ArrivalEvent(abs(ts), abs(id), TYPE_FROZ, B_REG, dist, abs(money));
+			else if (toupper(type) == 'F' && toupper(region) == 'C') pArrive = new ArrivalEvent(abs(ts), abs(id), TYPE_FROZ, C_REG, dist, abs(money));
+			else if (toupper(type) == 'F' && toupper(region) == 'D') pArrive = new ArrivalEvent(abs(ts), abs(id), TYPE_FROZ, D_REG, dist, abs(money));
 					 						 															 
-			else if (toupper(type) == 'V' && toupper(region) == 'A') pArrive = new ArrivalEvent(abs(ts), abs(id), TYPE_VIP, A_REG, abs(money));
-			else if (toupper(type) == 'V' && toupper(region) == 'B') pArrive = new ArrivalEvent(abs(ts), abs(id), TYPE_VIP, B_REG, abs(money));
-			else if (toupper(type) == 'V' && toupper(region) == 'C') pArrive = new ArrivalEvent(abs(ts), abs(id), TYPE_VIP, C_REG, abs(money));
-			else if (toupper(type) == 'V' && toupper(region) == 'D') pArrive = new ArrivalEvent(abs(ts), abs(id), TYPE_VIP, D_REG, abs(money));
+			else if (toupper(type) == 'V' && toupper(region) == 'A') pArrive = new ArrivalEvent(abs(ts), abs(id), TYPE_VIP, A_REG, dist, abs(money));
+			else if (toupper(type) == 'V' && toupper(region) == 'B') pArrive = new ArrivalEvent(abs(ts), abs(id), TYPE_VIP, B_REG, dist, abs(money));
+			else if (toupper(type) == 'V' && toupper(region) == 'C') pArrive = new ArrivalEvent(abs(ts), abs(id), TYPE_VIP, C_REG, dist, abs(money));
+			else if (toupper(type) == 'V' && toupper(region) == 'D') pArrive = new ArrivalEvent(abs(ts), abs(id), TYPE_VIP, D_REG, dist, abs(money));
 														   
 			pRest->AddEvent(pArrive);
 
@@ -93,7 +93,7 @@ void Io::load(){
 			pRest->AddEvent(pPromote);
 		}
 	}
-	//fileIN.close();
+	fileIN.close();
 }
 
 void Io::print(int VIPOA, int VIPOB, int VIPOC, int VIPOD, int FrozOA, int FrozOB, int FrozOC, int FrozOD, int NormOA, int NormOB, int NormOC, int NormOD){
@@ -103,7 +103,12 @@ void Io::print(int VIPOA, int VIPOB, int VIPOC, int VIPOD, int FrozOA, int FrozO
 	srand(time(0));
 	int x = rand()%101;
 	fileOUT.open("OutputFile"+to_string(x)+".txt");
-	fileOUT << "FT ID AT WT ST" << endl;
+	Order* temp = pRest->GetListFisrtItem();
+	fileOUT << "FT   ID   AT   WT   ST" << endl;
+	while (temp) {
+		fileOUT << temp->GetFinishTime() << "  " << temp->GetID() << " " << temp->GetArrTime() << " " << temp->GetWT() << " " << temp->GetServTime() << endl;
+		temp = pRest->GetListFisrtItem();
+	}
 	for (int i = 0; i < 4; i++) {
 		switch (i) {
 		case 0:
