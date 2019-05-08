@@ -16,7 +16,7 @@ public:
 	bool remove(int pos);
 	int getLength()const;
 	bool replace(const T newData, int pos);
-	T GetItmeAt(int pos) const;
+	bool GetItmeAt(int pos, T& putin) const;
 };
 
 template<class T>
@@ -123,12 +123,13 @@ bool List<T>::replace(const T newData, int pos){
 }
 
 template<class T>
-T List<T>::GetItmeAt(int pos) const{
-	if (pos<1 || pos > count || !Head) return 0;
+bool List<T>::GetItmeAt(int pos,T& putin) const{
+	if (pos<1 || pos > count || !Head) return false;
 	Node<T>* p = Head;
 	while (pos > 1) {
 		pos--;
 		p = p->getNext();
 	}
-	return p->getItem();
+	putin =  (p->getItem());
+	return true;
 }

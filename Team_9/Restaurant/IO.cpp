@@ -5,7 +5,12 @@ int Io::sum(int * x, int size){
 	for (int i = 0; i < size; i++) { sum += x[i]; }
 	return sum;
 }
-Io::Io(Restaurant * pR, GUI * pG):pRest(pR),pGUI(pG){}
+Io::Io(Restaurant * pR, GUI * pG):pRest(pR),pGUI(pG){
+	memset(SumST, 0, sizeof(SumST));
+	memset(SumWT, 0, sizeof(SumWT));
+	memset(AvgST, 0, sizeof(AvgST));
+	memset(AvgWT, 0, sizeof(AvgWT));
+}
 
 void Io::load(){
 	pGUI->PrintMessage("Enter file name:");
@@ -33,20 +38,20 @@ void Io::load(){
 	fileIN >> NmberEvent; //Number of expected lines coming after that(it corresponding to number of events
 	pRest->SetAutoPromTime(abs(autolimit));
 	
-	for (int i = 0; i < abs(nM[0]); i++) {motornorm = new Motorcycle(abs(sn), A_REG); pRest->AddMototrcycle(motornorm); motornorm = NULL;}
-	for (int i = 0; i < abs(nM[1]); i++) {motornorm = new Motorcycle(abs(sn), A_REG); pRest->AddMototrcycle(motornorm); motornorm = NULL;}
-	for (int i = 0; i < abs(nM[2]); i++) {motornorm = new Motorcycle(abs(sn), A_REG); pRest->AddMototrcycle(motornorm); motornorm = NULL;}
-	for (int i = 0; i < abs(nM[3]); i++) {motornorm = new Motorcycle(abs(sn), A_REG); pRest->AddMototrcycle(motornorm); motornorm = NULL;}
-						
-	for (int i = 0; i < abs(fM[0]); i++) { motorfroz = new Motorcycle(abs(sf), A_REG); pRest->AddMototrcycle(motorfroz); motorfroz = NULL;}
-	for (int i = 0; i < abs(fM[1]); i++) { motorfroz = new Motorcycle(abs(sf), B_REG); pRest->AddMototrcycle(motorfroz); motorfroz = NULL;}
-	for (int i = 0; i < abs(fM[2]); i++) { motorfroz = new Motorcycle(abs(sf), C_REG); pRest->AddMototrcycle(motorfroz); motorfroz = NULL;}
-	for (int i = 0; i < abs(fM[3]); i++) { motorfroz = new Motorcycle(abs(sf), D_REG); pRest->AddMototrcycle(motorfroz); motorfroz = NULL;}
-						
-	for (int i = 0; i < abs(vM[0]); i++) { motorvip = new Motorcycle(abs(sv), A_REG); pRest->AddMototrcycle(motorvip); motorvip = NULL;}
-	for (int i = 0; i < abs(vM[1]); i++) { motorvip = new Motorcycle(abs(sv), B_REG); pRest->AddMototrcycle(motorvip); motorvip = NULL;}
-	for (int i = 0; i < abs(vM[2]); i++) { motorvip = new Motorcycle(abs(sv), C_REG); pRest->AddMototrcycle(motorvip); motorvip = NULL;}
-	for (int i = 0; i < abs(vM[3]); i++) { motorvip = new Motorcycle(abs(sv), D_REG); pRest->AddMototrcycle(motorvip); motorvip = NULL;}
+	for (int i = 0; i < abs(nM[0]); i++) {motornorm = new  Motorcycle(abs(sn), A_REG,TYPE_NRM); pRest->AddMototrcycle(motornorm); motornorm = NULL;}
+	for (int i = 0; i < abs(nM[1]); i++) {motornorm = new  Motorcycle(abs(sn), B_REG,TYPE_NRM); pRest->AddMototrcycle(motornorm); motornorm = NULL;}
+	for (int i = 0; i < abs(nM[2]); i++) {motornorm = new  Motorcycle(abs(sn), C_REG,TYPE_NRM); pRest->AddMototrcycle(motornorm); motornorm = NULL;}
+	for (int i = 0; i < abs(nM[3]); i++) {motornorm = new  Motorcycle(abs(sn), D_REG,TYPE_NRM); pRest->AddMototrcycle(motornorm); motornorm = NULL;}
+																					
+	for (int i = 0; i < abs(fM[0]); i++) { motorfroz = new Motorcycle(abs(sf), A_REG,TYPE_FROZ); pRest->AddMototrcycle(motorfroz); motorfroz = NULL;}
+	for (int i = 0; i < abs(fM[1]); i++) { motorfroz = new Motorcycle(abs(sf), B_REG,TYPE_FROZ); pRest->AddMototrcycle(motorfroz); motorfroz = NULL;}
+	for (int i = 0; i < abs(fM[2]); i++) { motorfroz = new Motorcycle(abs(sf), C_REG,TYPE_FROZ); pRest->AddMototrcycle(motorfroz); motorfroz = NULL;}
+	for (int i = 0; i < abs(fM[3]); i++) { motorfroz = new Motorcycle(abs(sf), D_REG,TYPE_FROZ); pRest->AddMototrcycle(motorfroz); motorfroz = NULL;}
+																					
+	for (int i = 0; i < abs(vM[0]); i++) { motorvip = new  Motorcycle(abs(sv), A_REG,TYPE_VIP); pRest->AddMototrcycle(motorvip); motorvip = NULL;}
+	for (int i = 0; i < abs(vM[1]); i++) { motorvip = new  Motorcycle(abs(sv), B_REG,TYPE_VIP); pRest->AddMototrcycle(motorvip); motorvip = NULL;}
+	for (int i = 0; i < abs(vM[2]); i++) { motorvip = new  Motorcycle(abs(sv), C_REG,TYPE_VIP); pRest->AddMototrcycle(motorvip); motorvip = NULL;}
+	for (int i = 0; i < abs(vM[3]); i++) { motorvip = new  Motorcycle(abs(sv), D_REG,TYPE_VIP); pRest->AddMototrcycle(motorvip); motorvip = NULL;}
 
 	Event* pArrive;		CancelationEvent* pCancel;		PromotionEvent* pPromote;
 	
@@ -103,11 +108,39 @@ void Io::print(int VIPOA, int VIPOB, int VIPOC, int VIPOD, int FrozOA, int FrozO
 	srand(time(0));
 	int x = rand()%101;
 	fileOUT.open("OutputFile"+to_string(x)+".txt");
-	Order* temp = pRest->GetListFisrtItem();
 	fileOUT << "FT   ID   AT   WT   ST" << endl;
-	while (temp) {
-		fileOUT << temp->GetFinishTime() << "  " << temp->GetID() << " " << temp->GetArrTime() << " " << temp->GetWT() << " " << temp->GetServTime() << endl;
+	Order temp ;
+	do {
 		temp = pRest->GetListFisrtItem();
+		if (temp.GetID() == 0) { break; }
+		if (temp.GetRegion() == A_REG) {
+			SumWT[0] += temp.GetWT();
+			SumST[0] += temp.GetServTime();
+		}
+		else if (temp.GetRegion() == B_REG) {
+			SumWT[1] += temp.GetWT();
+			SumST[1] += temp.GetServTime();
+		}
+		else if (temp.GetRegion() == C_REG) {
+			SumWT[2] += temp.GetWT();
+			SumST[2] += temp.GetServTime();
+		}
+		else {
+			SumWT[3] += temp.GetWT();
+			SumST[3] += temp.GetServTime();
+		}
+		fileOUT << temp.GetFinishTime() << "  " << temp.GetID() << " " << temp.GetArrTime() << " " << temp.GetWT() << " " << temp.GetServTime() << endl;
+		//temp = pRest->GetListFisrtItem();
+	} while (temp.GetID() != 0);
+	for (int i = 0; i < 4; i++) {
+		if (nO[i] + fO[i] + vO[i] != 0) {
+			AvgWT[i] = SumWT[i] * 1.0 / (nO[i] + fO[i] + vO[i]);
+			AvgST[i] = SumST[i] * 1.0 / (nO[i] + fO[i] + vO[i]);
+		}
+		else {
+			AvgWT[i] = 0;
+			AvgST[i] = 0;
+		}
 	}
 	for (int i = 0; i < 4; i++) {
 		switch (i) {
@@ -126,23 +159,23 @@ void Io::print(int VIPOA, int VIPOB, int VIPOC, int VIPOD, int FrozOA, int FrozO
 		}
 		fileOUT << "Orders: " << (nO[i] + fO[i] + vO[i]) << " " << "[Norm:" << nO[i] << ", Froz:" << fO[i] << ", VIP:" << vO[i] << "]" << endl;
 		fileOUT << "MotorC: " << (nM[i] + fM[i] + vM[i]) << " " << "[Norm:" << nM[i] << ", Froz:" << fM[i] << ", VIP:" << vM[i] << "]" << endl;
-		fileOUT << "Avg Wait = 111" << ", Avg Serv = 111" << endl; // this will be modified
+		fileOUT << "Avg Wait = "<< AvgWT[i] << ", Avg Serv = "<< AvgST[i] << endl; // this will be modified
 	}
 	int totalNormal = sum(nO, 4), totalFrozen = sum(fO, 4), totalVIP = sum(vO, 4);
 	int totalNMotor = sum(nM, 4), totalFMototr = sum(fM, 4), totalVMototr = sum(vM, 4);
 	fileOUT << "For Whole Resturant:" << endl;
 	fileOUT<<"Orders: "<<(totalNormal+totalFrozen+totalVIP)<<" "<< "[Norm:" << totalNormal << ", Froz:" << totalFrozen << ", VIP:" << totalVIP << "]" << endl;
 	fileOUT<< "MotorC: " << (totalFMototr+totalNMotor+totalVMototr) << " " << "[Norm:" << totalNMotor << ", Froz:" << totalFMototr << ", VIP:" << totalVMototr << "]" << endl;
-	fileOUT << "Avg Wait = 111" << ", Avg Serv = 111"; // this will be modified
+	fileOUT << "Avg Wait = "<<to_string(AvgWT[0] + AvgWT[1] + AvgWT[2] + AvgWT[3]) << ", Avg Serv = "<<to_string(AvgST[0] + AvgST[1] + AvgST[2] + AvgST[3]); // this will be modified
 	fileOUT.close();
 }
 
-void Io::PrintStatusBar(int vA ,int vB ,int vC ,int vD , int fA ,int fB ,int fC ,int fD,int nA ,int nB ,int nC ,int nD )
+void Io::PrintStatusBar(int vA ,int vB ,int vC ,int vD , int fA ,int fB ,int fC ,int fD,int nA ,int nB ,int nC ,int nD, int AVMotors, int BVMotors, int CVMotors, int DVMotors, int AFMotors, int BFMotors, int CFMotors, int DFMotors, int ANMotors, int BNMotors, int CNMotors, int DNMotors)
 {
-	pGUI->PrintMessage("Region A -> VIP orders: "+to_string(vA) +", Frozen orders: "+to_string(fA) +", Normal orders: "+to_string(nA)+", VIP motorcycles: "+to_string(pRest->GetInitialNumOfMOTR(0))+", Frozen motorcycles: "+to_string(pRest->GetInitialNumOfMOTR(1))+", NORMALmotorcycles: "+to_string(pRest->GetInitialNumOfMOTR(2))   )  ;
-	pGUI->PrintMessage2("Region B -> VIP orders: "+to_string(vB) +", Frozen orders: "+to_string(fB) +", Normal orders: "+to_string(nB)+", VIP motorcycles: "+to_string(pRest->GetInitialNumOfMOTR(3))+", Frozen motorcycles: "+to_string(pRest->GetInitialNumOfMOTR(4))+", NORMALmotorcycles: "+to_string(pRest->GetInitialNumOfMOTR(5))   )  ;
-	pGUI->PrintMessage3("Region C -> VIP orders: "+to_string(vC) +", Frozen orders: "+to_string(fC) +", Normal orders: "+to_string(nC)+", VIP motorcycles: "+to_string(pRest->GetInitialNumOfMOTR(6))+", Frozen motorcycles: "+to_string(pRest->GetInitialNumOfMOTR(7))+", NORMALmotorcycles: "+to_string(pRest->GetInitialNumOfMOTR(8))   )  ;
-	pGUI->PrintMessage4("Region D -> VIP orders: "+to_string(vD) +", Frozen orders: "+to_string(fD) +", Normal orders: "+to_string(nD)+", VIP motorcycles: "+to_string(pRest->GetInitialNumOfMOTR(9))+", Frozen motorcycles: "+to_string(pRest->GetInitialNumOfMOTR(10))+", NORMALmotorcycles: "+to_string(pRest->GetInitialNumOfMOTR(11)) )  ;	
+	pGUI->PrintMessage("Region A -> VIP orders: "+to_string(vA) +", Frozen orders: "+to_string(fA) +", Normal orders: "+to_string(nA)+", VIP motorcycles: "+ to_string(AVMotors)+", Frozen motorcycles: "+to_string(AFMotors)+", NORMALmotorcycles: "+to_string(ANMotors));
+	pGUI->PrintMessage2("Region B -> VIP orders: "+to_string(vB) +", Frozen orders: "+to_string(fB) +", Normal orders: "+to_string(nB)+", VIP motorcycles: "+to_string(BVMotors)+", Frozen motorcycles: "+to_string(BFMotors)+", NORMALmotorcycles: "+to_string(BNMotors));
+	pGUI->PrintMessage3("Region C -> VIP orders: "+to_string(vC) +", Frozen orders: "+to_string(fC) +", Normal orders: "+to_string(nC)+", VIP motorcycles: "+to_string(CVMotors)+", Frozen motorcycles: "+to_string(CFMotors)+", NORMALmotorcycles: "+to_string(CNMotors));
+	pGUI->PrintMessage4("Region D -> VIP orders: "+to_string(vD) +", Frozen orders: "+to_string(fD) +", Normal orders: "+to_string(nD)+", VIP motorcycles: "+to_string(DVMotors)+", Frozen motorcycles: "+to_string(DFMotors)+", NORMALmotorcycles: "+to_string(DNMotors));	
 
 }
 

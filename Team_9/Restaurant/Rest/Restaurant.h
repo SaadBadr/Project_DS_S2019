@@ -58,7 +58,7 @@ private:
 	PriorityQueue<Motorcycle*> InServiceMotorC;
 	PriorityQueue<Motorcycle*> InServiceMotorD;
 
-	List<Order*> AllOrders;
+	List<Order> AllOrders;
 	/// ==> 
 	//	DEMO-related members. Should be removed in phases 1&2
 	//Queue<Order*> DEMO_Queue;	//Important: This is just for demo
@@ -67,6 +67,9 @@ private:
 	int ABCD_VFN_motorcycle[12] ;									// initial numbers of motorcycles
 	
 	bool assign(Order * ord, int timestep);
+	int    VIPcounterA, VIPcounterB, VIPcounterC, VIPcounterD,
+		FROZENcounterA, FROZENcounterB, FROZENcounterC, FROZENcounterD,
+		NORMALcounterA, NORMALcounterB, NORMALcounterC, NORMALcounterD;
 
 public:
 	
@@ -80,6 +83,8 @@ public:
 	///  DEMO-related functions. Should be removed in phases 1&2
 	//void Just_A_Demo();	//just to show a demo and should be removed in phase1 1 & 2
 	void InteractiveMode();
+	void StepByStepMode();
+	void SilentMode();
 
 	void AddtoNormalQueueA(Order* po);	//adds an order to the demo queue
 	void AddtoNormalQueueB(Order* po);	//adds an order to the demo queue
@@ -117,7 +122,7 @@ public:
 
 	ifstream InputFile ;
 
-	void AddMototrcycle(Motorcycle * po);
+	void AddMototrcycle(Motorcycle * po, bool increment=false);
 	//the following will be needed in phase2(serving orders with motorcycles)
 	Motorcycle* GetNormalMotorcycleA();
 	Motorcycle* GetNormalMotorcycleB();
@@ -138,8 +143,8 @@ public:
 	// set values from  ( ABCD_VFN )
 
 	void SetInitialNumOfMOTR(int Av ,int Af ,int An , int Bv ,int Bf ,int Bn , int Cv ,int Cf ,int , int Dv ,int Df ,int Dn);
-	void SortAllOrders(List<Order*>& list);		// sorting all orders for OutputFile
-	Order* GetListFisrtItem();
+	void SortAllOrders(List<Order>& list);		// sorting all orders for OutputFile
+	Order GetListFisrtItem();
 
 	void SetAutoPromTime(int time);
 	int GetAutoPromTime();

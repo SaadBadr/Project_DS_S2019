@@ -7,7 +7,14 @@ Motorcycle::Motorcycle()
 {
 }
 
-Motorcycle::Motorcycle(int sp, REGION rg, STATUS s ):speed(sp),region(rg),status(s){}
+Motorcycle::Motorcycle(int sp, REGION rg, ORD_TYPE typ, STATUS s){
+	speed = sp;
+	region = rg;
+	status = s;
+	type = typ;
+	ID = 0;
+	ReturnTime = 0;
+}
 
 
 //*************************************************Getters************************************************

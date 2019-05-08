@@ -16,7 +16,7 @@ class Motorcycle
 
 public:
 	Motorcycle();
-	Motorcycle(int sp, REGION rg, STATUS s=IDLE);
+	Motorcycle(int sp, REGION rg, ORD_TYPE typ, STATUS s = IDLE);
 	int GetID();
 	int GetSpeed();
 	REGION GetRegion();

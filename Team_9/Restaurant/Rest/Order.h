@@ -19,6 +19,7 @@ protected:
 	double priority;
 
 public:
+	Order();
 	Order(int ID, ORD_TYPE r_Type, REGION r_region, double totmoney = 0, int dist = 0, int arrTime = 0, int WT = 0);
 	virtual ~Order();
 

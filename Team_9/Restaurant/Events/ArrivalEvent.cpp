@@ -11,11 +11,7 @@ ArrivalEvent::ArrivalEvent(int eTime, int oID, ORD_TYPE oType, REGION reg,int di
 }
 
 void ArrivalEvent::Execute(Restaurant* pRest)const{
-	//This function should create and order and and fills its data 
-	// Then adds it to normal, frozen, or VIP order lists that you will create in phase1
-
-	Order* pOrd = new Order(OrderID,OrdType,OrdRegion);
-	
+	Order* pOrd = new Order(OrderID, OrdType, OrdRegion, OrdMoney, OrdDistance, EventTime);
 	if(OrdType == TYPE_VIP){
 	
 		if(OrdRegion == A_REG)

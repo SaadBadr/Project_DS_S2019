@@ -5,12 +5,20 @@
 //*************************************************Constructors************************************************
 
 
+Order::Order(){
+
+}
+
 Order::Order(int id, ORD_TYPE r_Type, REGION r_region, double totmoney, int dist , int arrTime , int WT ){
 
 	SetDistance(dist);
 	SetMoney(totmoney);
-
-	ID = (id > 0 && id < 1000) ? id:0;	//1<ID<999
+	ArrTime = arrTime;
+	WT = 0;
+	FinishTime = 0;
+	ServTime = 0;
+	WaitingTime = 0;
+	ID = (id > 0 && id < 10000) ? id:0;	//1<ID<999
 	type = r_Type;
 	Region = r_region;	
 	if (r_Type == TYPE_VIP)
@@ -133,11 +141,12 @@ bool Order::operator==(const  Order o){
 void Order::operator=(const Order o){
 
 	ID = o.ID;       
-	type = type;		
-	Region = Region;  
-	Distance = Distance;
-	totalMoney =  totalMoney ;
-	ArrTime = ArrTime ;
+	type = o.type;		
+	Region = o.Region;
+	Distance = o.Distance;
+	totalMoney = o.totalMoney ;
+	ArrTime = o.ArrTime ;
+	WaitingTime = o.WaitingTime;
 	ServTime = o.ServTime ;
 	FinishTime = o.FinishTime ;
 	priority = o.priority ;
