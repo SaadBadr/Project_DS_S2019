@@ -1,0 +1,32 @@
+﻿  Restaurant.cpp
+c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\rest\restaurant.cpp(56): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\rest\restaurant.cpp(104): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\rest\restaurant.cpp(152): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\rest\restaurant.cpp(200): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\generic_ds\tree.h(78): warning C4101: 'elem': unreferenced local variable
+  c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\generic_ds\tree.h(76): note: while compiling class template member function 'bool Tree<T>::pop_largest(T &)'
+          with
+          [
+              T=Order *
+          ]
+  c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\generic_ds\priorityqueue.h(45): note: see reference to function template instantiation 'bool Tree<T>::pop_largest(T &)' being compiled
+          with
+          [
+              T=Order *
+          ]
+  c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\generic_ds\priorityqueue.h(27): note: while compiling class template member function 'PriorityQueue<Order *>::PriorityQueue(void)'
+  c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\rest\restaurant.cpp(209): note: see reference to function template instantiation 'PriorityQueue<Order *>::PriorityQueue(void)' being compiled
+  c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\rest\restaurant.h(33): note: see reference to class template instantiation 'PriorityQueue<Order *>' being compiled
+c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\generic_ds\tree.h(160): warning C4101: 'elem': unreferenced local variable
+  c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\generic_ds\tree.h(157): note: while compiling class template member function 'bool Tree<T>::get_largest(T &)'
+          with
+          [
+              T=Order *
+          ]
+  c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\generic_ds\priorityqueue.h(38): note: see reference to function template instantiation 'bool Tree<T>::get_largest(T &)' being compiled
+          with
+          [
+              T=Order *
+          ]
+c:\users\tarek\desktop\data_structre_project_cmp22\project_ds_s2019\team_9\restaurant\rest\restaurant.cpp(1356): warning C4715: 'Restaurant::GetListFisrtItem': not all control paths return a value
+  Restaurant.vcxproj -> C:\Users\tarek\Desktop\Data_Structre_project_CMP22\Project_DS_S2019\Team_9\Debug\Restaurant.exe

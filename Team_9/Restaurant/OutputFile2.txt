@@ -1,0 +1,59 @@
+FT   ID   AT   WT   ST
+9  38 8 0 1
+16  1 1 0 15
+16  1 1 0 15
+16  1 1 0 15
+16  1 1 0 15
+16  1 1 0 15
+18  44 9 0 9
+21  8 4 0 17
+21  9 4 0 17
+21  8 4 0 17
+21  8 4 0 17
+21  8 4 0 17
+21  8 4 0 17
+21  8 4 0 17
+21  8 4 0 17
+21  8 4 0 17
+21  8 4 0 17
+21  8 4 0 17
+21  8 4 0 17
+24  17 5 0 19
+24  17 5 0 19
+24  17 5 0 19
+24  17 5 0 19
+24  17 5 0 19
+24  17 5 0 19
+24  17 5 0 19
+24  17 5 0 19
+25  27 5 0 20
+25  26 5 0 20
+25  26 5 0 20
+25  26 5 0 20
+27  32 7 0 20
+27  32 7 0 20
+27  32 7 0 20
+27  32 7 0 20
+27  32 7 0 20
+27  32 7 0 20
+27  32 7 0 20
+Region A:
+Orders: 11 [Norm:6, Froz:2, VIP:3]
+MotorC: 12 [Norm:5, Froz:4, VIP:3]
+Avg Wait = 0, Avg Serv = 2.63636
+Region B:
+Orders: 13 [Norm:8, Froz:3, VIP:2]
+MotorC: 10 [Norm:4, Froz:3, VIP:3]
+Avg Wait = 0, Avg Serv = 21.1538
+Region C:
+Orders: 35 [Norm:26, Froz:6, VIP:3]
+MotorC: 11 [Norm:4, Froz:5, VIP:2]
+Avg Wait = 0, Avg Serv = 5.34286
+Region D:
+Orders: 6 [Norm:2, Froz:3, VIP:1]
+MotorC: 12 [Norm:3, Froz:5, VIP:4]
+Avg Wait = 0, Avg Serv = 28.3333
+For Whole Resturant:
+Orders: 65 [Norm:42, Froz:14, VIP:9]
+MotorC: 45 [Norm:16, Froz:17, VIP:12]
+Avg Wait = 0.000000, Avg Serv = 57.466400
